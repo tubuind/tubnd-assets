@@ -1,0 +1,39 @@
+{
+    "astcoreApp": {
+        "mtdProvince" : {
+            "home": {
+                "title": "Tỉnh/TP",
+                "createLabel": "Thêm mới",
+                "createOrEditLabel": "Thêm mới hoặc cập nhật Tỉnh/TP",
+                "search": "Tìm kiếm Tỉnh/TP",
+                "createForm": "Thêm mới tỉnh thành",
+                "updateForm": "Cập nhật tỉnh thành"
+            },
+            "created": "Một Tỉnh/TP mới được tạo với định danh {{ param }}",
+            "updated": "Một Tỉnh/TP cập nhật với định danh {{ param }}",
+            "deleted": "Một Tỉnh/TP đã xóa với định danh {{ param }}",
+            "delete": {
+                "question": "Bạn có chắc chắn muốn xóa Tỉnh/TP {{ id }} không?"
+            },
+            "detail": {
+                "title": "Tỉnh/TP"
+            },
+            "provincecode": "Mã Tỉnh/TP",
+            "provincename": "Tên Tỉnh/TP",
+            "prolatitude": "Kinh độ",
+            "prolongitude": "Vĩ độ",
+            "countryname": "Tên Quốc gia",
+            "status": "Trạng thái",
+            "isdel": "Isdel",
+            "createby": "Ngày tạo",
+            "createdate": "Người tạo",
+            "lastmodifyby": "Người sửa",
+            "lastmodifydate": "Ngày sửa",
+            "mtdCountry": "Quốc gia",
+            "mtdDistrict": "Mtd District",
+            "activated": "Hoạt động",
+            "deactivated": "Không hoạt động",
+            "action": "Thao tác"
+        }
+    }
+}

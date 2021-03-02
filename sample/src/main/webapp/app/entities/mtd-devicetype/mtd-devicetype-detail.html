@@ -1,0 +1,55 @@
+<div>
+    <section class="content">
+        <div class="box box-default">
+            <div class="box-body">
+                <h2 class="text-center"><span data-translate="astcoreApp.mtdDevicetype.detail.title">Mtd Devicetype</span> {{vm.mtdDevicetype.id}}</h2>
+                <hr>
+                <jhi-alert-error></jhi-alert-error>
+                <dl class="dl-horizontal jh-entity-details">
+                    <dt><span data-translate="astcoreApp.mtdDevicetype.devicetypename">Devicetypename</span></dt>
+                    <dd>
+                        <span>{{vm.mtdDevicetype.devicetypename}}</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.mtdDevicetype.active">Active</span></dt>
+                    <dd>
+                        <span class="label label-danger" ng-show="!vm.mtdDevicetype.active"
+                            data-translate="astcoreApp.mtdDevicetype.deactivated">Deactivated</span>
+                        <span class="label label-success" ng-show="vm.mtdDevicetype.active"
+                            data-translate="astcoreApp.mtdDevicetype.activated">Activated</span>
+                    </dd>
+                    <!-- <dt><span data-translate="astcoreApp.mtdDevicetype.isdel">Isdel</span></dt>
+                    <dd>
+                        <span>{{vm.mtdDevicetype.isdel}}</span>
+                    </dd> -->
+                    <dt><span data-translate="astcoreApp.mtdDevicetype.createby">Createby</span></dt>
+                    <dd>
+                        <span>{{vm.mtdDevicetype.createby}}</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.mtdDevicetype.createdate">Createdate</span></dt>
+                    <dd>
+                        <span>{{vm.mtdDevicetype.createdate | date:'mediumDate'}}</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.mtdDevicetype.lastmodifyby">Lastmodifyby</span></dt>
+                    <dd>
+                        <span>{{vm.mtdDevicetype.lastmodifyby}}</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.mtdDevicetype.lastmodifydate">Lastmodifydate</span></dt>
+                    <dd>
+                        <span>{{vm.mtdDevicetype.lastmodifydate | date:'mediumDate'}}</span>
+                    </dd>
+                </dl>
+
+                <button type="submit"
+                        ui-sref="{{ vm.previousState }}"
+                        class="btn btn-info">
+                    <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+                </button>
+
+                <!-- <button type="button" ui-sref="mtd-devicetype-detail.edit({id:vm.mtdDevicetype.id})" class="btn btn-primary">
+                    <span class="glyphicon glyphicon-pencil"></span>
+                    <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+                </button> -->
+            </div>
+        </div>
+    </section>
+</div>

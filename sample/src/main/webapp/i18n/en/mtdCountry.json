@@ -1,0 +1,34 @@
+{
+    "astcoreApp": {
+        "mtdCountry" : {
+            "home": {
+                "title": "Mtd Countries",
+                "createLabel": "Create a new Mtd Country",
+                "createOrEditLabel": "Create or edit a Mtd Country",
+                "search": "Search for Mtd Country",
+                "createForm": "Create a new Mtd Country",
+                "updateForm": "Edit a new Mtd Country"
+            },
+            "created": "A new Mtd Country is created with identifier {{ param }}",
+            "updated": "A Mtd Country is updated with identifier {{ param }}",
+            "deleted": "A Mtd Country is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Mtd Country {{ id }}?"
+            },
+            "detail": {
+                "title": "Mtd Country"
+            },
+            "countryname": "Countryname",
+            "active": "Active",
+            "isdel": "Isdel",
+            "createby": "Createby",
+            "createdate": "Createdate",
+            "lastmodifyby": "Lastmodifyby",
+            "lastmodifydate": "Lastmodifydate",
+            "mtdProvince": "Mtd Province",
+            "deactivated": "Deactivated",
+            "activated": "Activated",
+            "action": "Action"
+        }
+    }
+}

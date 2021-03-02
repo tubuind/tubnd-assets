@@ -1,0 +1,68 @@
+<div>
+    <section class="content">
+        <div class="box box-default">
+            <div class="box-body">
+                <h2><span data-translate="astcoreApp.cifDevice.detail.title">Cif Device</span> {{vm.cifDevice.id}}</h2>
+                <hr>
+                <jhi-alert-error></jhi-alert-error>
+                <dl class="dl-horizontal jh-entity-details">
+                    <dt><span data-translate="astcoreApp.cifDevice.actiontype">Actiontype</span></dt>
+                    <dd>                        
+                        <span ng-show="vm.cifDevice.actiontype"
+                            data-translate="astcoreApp.EnumActionType.1">Cho thuê</span>
+                        <span ng-show="!vm.cifDevice.actiontype"
+                            data-translate="astcoreApp.EnumActionType.0">Bán</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.cifDevice.startdate">Startdate</span></dt>
+                    <dd>
+                        <span>{{vm.cifDevice.startdate | date:'mediumDate'}}</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.cifDevice.enddate">Enddate</span></dt>
+                    <dd>
+                        <span>{{vm.cifDevice.enddate | date:'mediumDate'}}</span>
+                    </dd>
+                    <!-- <dt><span data-translate="astcoreApp.cifDevice.isdel">Isdel</span></dt>
+                    <dd>
+                        <span>{{vm.cifDevice.isdel}}</span>
+                    </dd> -->
+                    <dt><span data-translate="astcoreApp.cifDevice.createby">Createby</span></dt>
+                    <dd>
+                        <span>{{vm.cifDevice.createby}}</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.cifDevice.createdate">Createdate</span></dt>
+                    <dd>
+                        <span>{{vm.cifDevice.createdate | date:'mediumDate'}}</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.cifDevice.lastmodifyby">Lastmodifyby</span></dt>
+                    <dd>
+                        <span>{{vm.cifDevice.lastmodifyby}}</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.cifDevice.lastmodifydate">Lastmodifydate</span></dt>
+                    <dd>
+                        <span>{{vm.cifDevice.lastmodifydate | date:'mediumDate'}}</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.cifDevice.cifMaster">Cif Master</span></dt>
+                    <dd>
+                        <a ui-sref="cif-master-detail({id:vm.cifDevice.cifMasterId})">{{vm.cifDevice.cifMasterName}}</a>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.cifDevice.deviceInfo">Device Info</span></dt>
+                    <dd>
+                        <a ui-sref="device-info-detail({id:vm.cifDevice.deviceInfoId})">{{vm.cifDevice.deviceInfoName}}</a>
+                    </dd>
+                </dl>
+
+                <button type="submit"
+                        ui-sref="{{ vm.previousState }}"
+                        class="btn btn-info">
+                    <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+                </button>
+
+                <!-- <button type="button" ui-sref="cif-device-detail.edit({id:vm.cifDevice.id})" class="btn btn-primary">
+                    <span class="glyphicon glyphicon-pencil"></span>
+                    <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+                </button> -->
+            </div>
+        </div>
+    </section>
+</div>
+

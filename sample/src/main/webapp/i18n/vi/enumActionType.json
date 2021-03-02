@@ -1,0 +1,8 @@
+{
+    "astcoreApp": {
+        "EnumActionType" : {
+            "0": "Bán",
+            "1": "Cho thuê"
+        }
+    }
+}

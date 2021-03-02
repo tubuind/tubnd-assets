@@ -1,0 +1,117 @@
+<div>
+	<section class="content-header">
+        <h1 data-translate="astcoreApp.cifArea.home.title">Cif Areas</h1>
+    </section>
+    
+    <section class="content">
+        <div class="box box-default">
+            <div class="box-header with-border">
+                <div class="container-fluid">
+			        <div class="row">
+			            <div class="col-xs-8 no-padding-left">
+							<form name="searchForm" class="form-inline">
+								<div class="input-group pull-right" >
+									<input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'astcoreApp.cifArea.home.search' | translate }}">
+									<span  class="input-group-btn width-min" >
+										<button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
+											<span class="glyphicon glyphicon-search"></span>
+										</button>
+									</span>
+									<span class="input-group-btn width-min" ng-if="vm.currentSearch">
+										<button class="btn btn-info" ng-click="vm.clear()">
+											<span class="glyphicon glyphicon-trash"></span>
+										</button>
+									</span>
+								</div>
+							</form>
+			            </div>
+			            <div class="col-xs-4 no-padding-right text-right">
+							<button class="btn btn-primary" ui-sref="cif-area.new" >
+								<span class="glyphicon glyphicon-plus"></span>
+								<span class="hidden-xs-down"  data-translate="astcoreApp.cifArea.home.createLabel">
+									Create new Cif Area
+								</span>
+							</button>			                
+			            </div>
+			        </div>
+			    </div>
+            </div>
+
+            <jhi-alert></jhi-alert>
+
+            <div class="box-body">
+                <div class="table-responsive">
+			        <table class="jh-table table table-striped">
+			            <thead>
+			                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+			                    <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+			                    <th><span data-translate="astcoreApp.cifArea.cifareacode">Cifareacode</span></th>
+			                    <th><span data-translate="astcoreApp.cifArea.cifareaname">Cifareaname</span></th>
+			                    <th><span data-translate="astcoreApp.cifArea.cifareadesc">Cifareadesc</span></th>
+			                    <th><span data-translate="astcoreApp.cifArea.cifareaparent">Cifareaparent</span></th>
+			                    <th><span data-translate="astcoreApp.cifArea.cifMaster">Cif Master</span></th>
+			                    <th><span data-translate="astcoreApp.cifArea.active">Active</span></th>
+			                    <!-- <th jh-sort-by="isdel"><span data-translate="astcoreApp.cifArea.isdel">Isdel</span> <span class="glyphicon glyphicon-sort"></span></th>
+			                    <th jh-sort-by="createby"><span data-translate="astcoreApp.cifArea.createby">Createby</span> <span class="glyphicon glyphicon-sort"></span></th>
+			                    <th jh-sort-by="createdate"><span data-translate="astcoreApp.cifArea.createdate">Createdate</span> <span class="glyphicon glyphicon-sort"></span></th>
+			                    <th jh-sort-by="lastmodifyby"><span data-translate="astcoreApp.cifArea.lastmodifyby">Lastmodifyby</span> <span class="glyphicon glyphicon-sort"></span></th>
+			                    <th jh-sort-by="lastmodifydate"><span data-translate="astcoreApp.cifArea.lastmodifydate">Lastmodifydate</span> <span class="glyphicon glyphicon-sort"></span></th> -->
+			                    <th><span data-translate="astcoreApp.cifArea.action">Action</span></th>
+			                </tr>
+			            </thead>
+			            <tbody>
+			                <tr ng-repeat="cifArea in vm.cifAreas track by cifArea.id">
+			                    <td><a ui-sref="cif-area-detail({id:cifArea.id})">{{cifArea.id}}</a></td>
+			                    <td>{{cifArea.cifareacode}}</td>
+			                    <td>{{cifArea.cifareaname}}</td>
+			                    <td>{{cifArea.cifareadesc}}</td>
+			                    <td>{{cifArea.cifareaparent}}</td>
+			                    <td>
+			                        <a ui-sref="cif-master-detail({id:cifArea.cifMasterId})">{{cifArea.cifMasterName}}</a>
+			                    </td>
+			                    <td>
+									<span class="label label-danger" ng-show="!cifArea.active"
+										data-translate="astcoreApp.cifArea.deactivated">Deactivated</span>
+									<span class="label label-success" ng-show="cifArea.active"
+										data-translate="astcoreApp.cifArea.activated">Activated</span>
+								</td>
+			                    <!-- <td>{{cifArea.isdel}}</td>
+			                    <td>{{cifArea.createby}}</td>
+			                        <td>{{cifArea.createdate | date:'mediumDate'}}</td>
+			                    <td>{{cifArea.lastmodifyby}}</td>
+			                        <td>{{cifArea.lastmodifydate | date:'mediumDate'}}</td> -->
+			                    
+			                    <td class="text-right">
+			                        <div class="btn-group flex-btn-group-container">
+			                            <button type="submit"
+			                                    ui-sref="cif-area-detail({id:cifArea.id})"
+			                                    class="btn btn-info btn-sm">
+			                                <span class="glyphicon glyphicon-eye-open"></span>
+			                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+			                            </button>
+			                            <button type="submit"
+			                                    ui-sref="cif-area.edit({id:cifArea.id})"
+			                                    class="btn btn-primary btn-sm">
+			                                <span class="glyphicon glyphicon-pencil"></span>
+			                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+			                            </button>
+			                            <button type="submit"
+			                                    ui-sref="cif-area.delete({id:cifArea.id})"
+			                                    class="btn btn-danger btn-sm">
+			                                <span class="glyphicon glyphicon-remove-circle"></span>
+			                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+			                            </button>
+			                        </div>
+			                    </td>
+			                </tr>
+			            </tbody>
+			        </table>
+			    </div>
+                <div class="text-center">
+                    <jhi-item-count page="vm.page" total="vm.queryCount" items-per-page="vm.itemsPerPage"></jhi-item-count>
+                    <uib-pagination class="pagination-sm" total-items="vm.totalItems" items-per-page="vm.itemsPerPage" ng-model="vm.page" ng-change="vm.transition()"></uib-pagination>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

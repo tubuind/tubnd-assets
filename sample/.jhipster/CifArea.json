@@ -1,0 +1,111 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "cifMaster",
+            "otherEntityName": "cifMaster",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "cifAreaDevice",
+            "otherEntityName": "cifAreaDevice",
+            "otherEntityRelationshipName": "cifArea"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "cifareaparent",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "cifareacode",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 1,
+            "fieldValidateRulesMaxlength": 30
+        },
+        {
+            "fieldName": "cifareaname",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 1,
+            "fieldValidateRulesMaxlength": 255
+        },
+        {
+            "fieldName": "cifareadesc",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 1,
+            "fieldValidateRulesMaxlength": 255
+        },
+        {
+            "fieldName": "active",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required",
+                "min",
+                "max"
+            ],
+            "fieldValidateRulesMin": 0,
+            "fieldValidateRulesMax": 10
+        },
+        {
+            "fieldName": "isdel",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required",
+                "min",
+                "max"
+            ],
+            "fieldValidateRulesMin": 0,
+            "fieldValidateRulesMax": 10
+        },
+        {
+            "fieldName": "createby",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 1,
+            "fieldValidateRulesMaxlength": 50
+        },
+        {
+            "fieldName": "createdate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "lastmodifyby",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 1,
+            "fieldValidateRulesMaxlength": 50
+        },
+        {
+            "fieldName": "lastmodifydate",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "changelogDate": "20170702050920",
+    "entityTableName": "cif_area",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl"
+}

@@ -1,0 +1,38 @@
+{
+    "astcoreApp": {
+        "mtdDistrict" : {
+            "home": {
+                "title": "Quận/Huyện",
+                "createLabel": "Thêm mới",
+                "createOrEditLabel": "Thêm mới hoặc cập nhật Quận/Huyện",
+                "search": "Tìm kiếm Quận/Huyện",
+                "createForm": "Thêm mới Quận/Huyện",
+                "updateForm": "Cập nhật thông tin Quận/Huyện"
+            },
+            "created": "Một Quận/Huyện mới được tạo với định danh {{ param }}",
+            "updated": "Một Quận/Huyện cập nhật với định danh {{ param }}",
+            "deleted": "Một Quận/Huyện đã xóa với định danh {{ param }}",
+            "delete": {
+                "question": "Bạn có chắc chắn muốn xóa Quận/Huyện {{ id }} không?"
+            },
+            "detail": {
+                "title": "Quận/Huyện"
+            },
+            "districtcode": "Mã Quận/Huyện",
+            "districtname": "Tên Quận/Huyện",
+            "dislatitude": "Kinh độ",
+            "dislongitude": "Vĩ độ",
+            "active": "Trạng thái",
+            "isdel": "Đã xóa",
+            "createby": "Người tạo",
+            "createdate": "Ngày tạo",
+            "lastmodifyby": "Người sửa",
+            "lastmodifydate": "Ngày sửa",
+            "mtdProvince": "Tỉnh/TP",
+            "mtdWard": "Khu vực",
+            "action": "Thao tác",
+            "activated": "Hoạt động",
+            "deactivated": "Không hoạt động"
+        }
+    }
+}

@@ -1,0 +1,39 @@
+{
+    "astcoreApp": {
+        "mtdOrganization" : {
+            "home": {
+                "title": "Mtd Organizations",
+                "createLabel": "Create a new Mtd Organization",
+                "createOrEditLabel": "Create or edit a Mtd Organization",
+                "search": "Search for Mtd Organization",
+                "createForm": "Create a new Mtd Organization",
+                "updateForm": "Update a Mtd Organization"
+            },
+            "created": "A new Mtd Organization is created with identifier {{ param }}",
+            "updated": "A Mtd Organization is updated with identifier {{ param }}",
+            "deleted": "A Mtd Organization is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Mtd Organization {{ id }}?"
+            },
+            "detail": {
+                "title": "Mtd Organization"
+            },
+            "organizationcode": "Organizationcode",
+            "organizationname": "Organizationname",
+            "address": "Address",
+            "mobilenum": "Mobilenum",
+            "phonenum": "Phonenum",
+            "parents": "Parents",
+            "active": "Active",
+            "isdel": "Isdel",
+            "createby": "Createby",
+            "createdate": "Createdate",
+            "lastmodifyby": "Lastmodifyby",
+            "lastmodifydate": "Lastmodifydate",
+            "cifMaster": "Cif Master",
+            "deactivated": "Deactivated",
+            "activated": "Activated",
+            "action": "Action"
+        }
+    }
+}

@@ -1,0 +1,73 @@
+
+<div>
+    <section class="content">
+        <div class="box box-default">
+            <div class="box-body">
+                <h2 class="text-center"><span data-translate="astcoreApp.mtdDistrict.detail.title">Mtd District</span> {{vm.mtdDistrict.id}}</h2>
+                <hr>
+                <jhi-alert-error></jhi-alert-error>
+                <dl class="dl-horizontal jh-entity-details">
+                    <dt><span data-translate="astcoreApp.mtdDistrict.districtcode">Districtcode</span></dt>
+                    <dd>
+                        <span>{{vm.mtdDistrict.districtcode}}</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.mtdDistrict.districtname">Districtname</span></dt>
+                    <dd>
+                        <span>{{vm.mtdDistrict.districtname}}</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.mtdDistrict.dislatitude">Dislatitude</span></dt>
+                    <dd>
+                        <span>{{vm.mtdDistrict.dislatitude}}</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.mtdDistrict.dislongitude">Dislongitude</span></dt>
+                    <dd>
+                        <span>{{vm.mtdDistrict.dislongitude}}</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.mtdDistrict.active">Active</span></dt>
+                    <dd>
+                        <span class="label label-danger" ng-show="!vm.mtdDistrict.active"
+                            data-translate="astcoreApp.mtdDistrict.deactivated">Deactivated</span>
+                        <span class="label label-success" ng-show="vm.mtdDistrict.active"
+                            data-translate="astcoreApp.mtdDistrict.activated">Activated</span>
+                    </dd>
+                    <!-- <dt><span data-translate="astcoreApp.mtdDistrict.isdel">Isdel</span></dt>
+                    <dd>
+                        <span>{{vm.mtdDistrict.isdel}}</span>
+                    </dd> -->
+                    <dt><span data-translate="astcoreApp.mtdDistrict.createby">Createby</span></dt>
+                    <dd>
+                        <span>{{vm.mtdDistrict.createby}}</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.mtdDistrict.createdate">Createdate</span></dt>
+                    <dd>
+                        <span>{{vm.mtdDistrict.createdate | date:'mediumDate'}}</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.mtdDistrict.lastmodifyby">Lastmodifyby</span></dt>
+                    <dd>
+                        <span>{{vm.mtdDistrict.lastmodifyby}}</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.mtdDistrict.lastmodifydate">Lastmodifydate</span></dt>
+                    <dd>
+                        <span>{{vm.mtdDistrict.lastmodifydate | date:'mediumDate'}}</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.mtdDistrict.mtdProvince">Mtd Province</span></dt>
+                    <dd>
+                        <a ui-sref="mtd-province-detail({id:vm.mtdDistrict.mtdProvinceId})">{{vm.mtdDistrict.mtdProvinceProvincename}}</a>
+                    </dd>
+                </dl>
+
+                <button type="submit"
+                        ui-sref="{{ vm.previousState }}"
+                        class="btn btn-info">
+                    <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+                </button>
+
+                <!-- <button type="button" ui-sref="mtd-district-detail.edit({id:vm.mtdDistrict.id})" class="btn btn-primary">
+                    <span class="glyphicon glyphicon-pencil"></span>
+                    <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+                </button> -->
+            </div>
+        </div>
+    </section>
+</div>
+

@@ -1,0 +1,34 @@
+{
+    "astcoreApp": {
+        "mtdCountry" : {
+            "home": {
+                "title": "Quốc gia",
+                "createLabel": "Thêm mới",
+                "createOrEditLabel": "Thêm mới hoặc cập nhật Quốc gia",
+                "search": "Tìm kiếm Quốc gia",
+                "createForm": "Thêm mới Quốc gia",
+                "updateForm": "Cập nhật thông tin Quốc gia"
+            },
+            "created": "Một Quốc gia mới được tạo với định danh {{ param }}",
+            "updated": "Một Quốc gia cập nhật với định danh {{ param }}",
+            "deleted": "Một Quốc gia đã xóa với định danh {{ param }}",
+            "delete": {
+                "question": "Bạn có chắc chắn muốn xóa Quốc gia {{ id }} không?"
+            },
+            "detail": {
+                "title": "Quốc gia"
+            },
+            "countryname": "Tên Quốc gia",
+            "active": "Trạng thái",
+            "isdel": "Isdel",
+            "createby": "Người tạo",
+            "createdate": "Ngày tạo",
+            "lastmodifyby": "Người sửa",
+            "lastmodifydate": "Ngày sửa",
+            "mtdProvince": "Mtd Province",
+            "deactivated": "Không hoạt động",
+            "activated": "Hoạt động",
+            "action": "Thao tác"
+        }
+    }
+}

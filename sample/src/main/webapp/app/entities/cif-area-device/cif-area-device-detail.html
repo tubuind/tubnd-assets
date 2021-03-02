@@ -1,0 +1,40 @@
+<div>
+    <section class="content">
+        <div class="box box-default">
+            <div class="box-body">
+                <h2 class="text-center"><span data-translate="astcoreApp.cifAreaDevice.detail.title">Cif Area Device</span> {{vm.cifAreaDevice.id}}</h2>
+                <hr>
+                <jhi-alert-error></jhi-alert-error>
+                <dl class="dl-horizontal jh-entity-details">
+                    <dt><span data-translate="astcoreApp.cifAreaDevice.devicecode">Devicecode</span></dt>
+                    <dd>
+                        <span>{{vm.cifAreaDevice.devicecode}}</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.cifAreaDevice.startdate">Startdate</span></dt>
+                    <dd>
+                        <span>{{vm.cifAreaDevice.startdate | date:'mediumDate'}}</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.cifAreaDevice.cifArea">Cif Area</span></dt>
+                    <dd>
+                        <a ui-sref="cif-area-detail({id:vm.cifAreaDevice.cifAreaId})">{{vm.cifAreaDevice.cifAreaName}}</a>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.cifAreaDevice.cifDevice">Cif Device</span></dt>
+                    <dd>
+                        <a ui-sref="cif-device-detail({id:vm.cifAreaDevice.cifDeviceId})">{{vm.cifAreaDevice.cifDeviceName}}</a>
+                    </dd>
+                </dl>
+
+                <button type="submit"
+                        ui-sref="{{ vm.previousState }}"
+                        class="btn btn-info">
+                    <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+                </button>
+
+                <!-- <button type="button" ui-sref="cif-area-device-detail.edit({id:vm.cifAreaDevice.id})" class="btn btn-primary">
+                    <span class="glyphicon glyphicon-pencil"></span>
+                    <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+                </button> -->
+            </div>
+        </div>
+    </section>
+</div>

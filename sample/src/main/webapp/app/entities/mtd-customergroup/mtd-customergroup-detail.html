@@ -1,0 +1,47 @@
+
+<div>
+    <h2><span data-translate="astcoreApp.mtdCustomergroup.detail.title">Mtd Customergroup</span> {{vm.mtdCustomergroup.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="astcoreApp.mtdCustomergroup.custgroupname">Custgroupname</span></dt>
+        <dd>
+            <span>{{vm.mtdCustomergroup.custgroupname}}</span>
+        </dd>
+        <dt><span data-translate="astcoreApp.mtdCustomergroup.active">Active</span></dt>
+        <dd>
+            <span>{{vm.mtdCustomergroup.active}}</span>
+        </dd>
+        <dt><span data-translate="astcoreApp.mtdCustomergroup.isdel">Isdel</span></dt>
+        <dd>
+            <span>{{vm.mtdCustomergroup.isdel}}</span>
+        </dd>
+        <dt><span data-translate="astcoreApp.mtdCustomergroup.createby">Createby</span></dt>
+        <dd>
+            <span>{{vm.mtdCustomergroup.createby}}</span>
+        </dd>
+        <dt><span data-translate="astcoreApp.mtdCustomergroup.createdate">Createdate</span></dt>
+        <dd>
+            <span>{{vm.mtdCustomergroup.createdate | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span data-translate="astcoreApp.mtdCustomergroup.lastmodifyby">Lastmodifyby</span></dt>
+        <dd>
+            <span>{{vm.mtdCustomergroup.lastmodifyby}}</span>
+        </dd>
+        <dt><span data-translate="astcoreApp.mtdCustomergroup.lastmodifydate">Lastmodifydate</span></dt>
+        <dd>
+            <span>{{vm.mtdCustomergroup.lastmodifydate | date:'mediumDate'}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="mtd-customergroup-detail.edit({id:vm.mtdCustomergroup.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

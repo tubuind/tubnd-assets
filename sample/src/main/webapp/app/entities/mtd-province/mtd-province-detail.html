@@ -1,0 +1,76 @@
+<div>
+    <section class="content">
+        <div class="box box-default">
+            <div class="box-body">
+                <h2 class="text-center"><span data-translate="astcoreApp.mtdProvince.detail.title">Mtd Province</span> {{vm.mtdProvince.id}}</h2>
+                <hr>
+                <jhi-alert-error></jhi-alert-error>
+                <dl class="dl-horizontal jh-entity-details">
+                    <dt><span data-translate="astcoreApp.mtdProvince.provincecode">Provincecode</span></dt>
+                    <dd>
+                        <span>{{vm.mtdProvince.provincecode}}</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.mtdProvince.provincename">Provincename</span></dt>
+                    <dd>
+                        <span>{{vm.mtdProvince.provincename}}</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.mtdProvince.prolatitude">Prolatitude</span></dt>
+                    <dd>
+                        <span>{{vm.mtdProvince.prolatitude}}</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.mtdProvince.prolongitude">Prolongitude</span></dt>
+                    <dd>
+                        <span>{{vm.mtdProvince.prolongitude}}</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.mtdProvince.countryname">Countryname</span></dt>
+                    <dd>
+                        <span>{{vm.mtdProvince.countryname}}</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.mtdProvince.status">Status</span></dt>
+                    <dd>
+                        <span class="label label-danger" ng-show="!vm.mtdProvince.active"
+                            data-translate="astcoreApp.mtdProvince.deactivated">Deactivated</span>
+                        <span class="label label-success" ng-show="vm.mtdProvince.active"
+                            data-translate="astcoreApp.mtdProvince.activated">Activated</span>
+                    </dd>
+                    <!-- <dt><span data-translate="astcoreApp.mtdProvince.isdel">Isdel</span></dt>
+                    <dd>
+                        <span>{{vm.mtdProvince.isdel}}</span>
+                    </dd> -->
+                    <dt><span data-translate="astcoreApp.mtdProvince.createby">Createby</span></dt>
+                    <dd>
+                        <span>{{vm.mtdProvince.createby}}</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.mtdProvince.createdate">Createdate</span></dt>
+                    <dd>
+                        <span>{{vm.mtdProvince.createdate | date:'mediumDate'}}</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.mtdProvince.lastmodifyby">Lastmodifyby</span></dt>
+                    <dd>
+                        <span>{{vm.mtdProvince.lastmodifyby}}</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.mtdProvince.lastmodifydate">Lastmodifydate</span></dt>
+                    <dd>
+                        <span>{{vm.mtdProvince.lastmodifydate | date:'mediumDate'}}</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.mtdProvince.mtdCountry">Mtd Country</span></dt>
+                    <dd>
+                        <a ui-sref="mtd-country-detail({id:vm.mtdProvince.mtdCountryId})">{{vm.mtdProvince.countryname}}</a>
+                    </dd>
+                </dl>
+
+                <button type="submit"
+                        ui-sref="{{ vm.previousState }}"
+                        class="btn btn-info">
+                    <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+                </button>
+
+                <button type="button" ui-sref="mtd-province-detail.edit({id:vm.mtdProvince.id})" class="btn btn-primary">
+                    <span class="glyphicon glyphicon-pencil"></span>
+                    <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+                </button>
+            </div>
+        </div>
+    </section>
+</div>
+

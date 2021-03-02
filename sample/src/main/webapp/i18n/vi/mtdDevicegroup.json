@@ -1,0 +1,37 @@
+{
+    "astcoreApp": {
+        "mtdDevicegroup" : {
+            "home": {
+                "title": "Nhóm thiết bị",
+                "createLabel": "Thêm mới",
+                "createOrEditLabel": "Thêm mới hoặc cập nhật Nhóm thiết bị",
+                "search": "Tìm kiếm Nhóm thiết bị",
+                "createForm": "Thêm mới Nhóm thiết bị",
+                "updateForm": "Cập nhật thông tin Nhóm thiết bị"
+            },
+            "created": "Một Nhóm thiết bị mới được tạo với định danh {{ param }}",
+            "updated": "Một Nhóm thiết bị cập nhật với định danh {{ param }}",
+            "deleted": "Một Nhóm thiết bị đã xóa với định danh {{ param }}",
+            "delete": {
+                "question": "Bạn có chắc chắn muốn xóa Nhóm thiết bị {{ id }} không?"
+            },
+            "detail": {
+                "title": "Nhóm thiết bị"
+            },
+            "devicegroupname": "Tên Nhóm thiết bị",
+            "devicegroupcode": "Mã Nhóm thiết bị",
+            "unitcode": "Mã Đơn vị",
+            "active": "Trạng thái",
+            "isdel": "Isdel",
+            "createby": "Người tạo",
+            "createdate": "Ngày tạo",
+            "lastmodifyby": "Người sửa",
+            "lastmodifydate": "Ngày sửa",
+            "deviceInfo": "Thiết bị",
+            "mtdUnit": "Đơn vị đo",
+            "action": "Thao tác",
+            "activated": "Hoạt động",
+            "deactivated": "Không hoạt động"
+        }
+    }
+}

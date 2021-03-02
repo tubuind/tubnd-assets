@@ -1,0 +1,38 @@
+{
+    "astcoreApp": {
+        "mtdWard" : {
+            "home": {
+                "title": "Phường/Xã",
+                "createLabel": "Thêm mới",
+                "createOrEditLabel": "Thêm mới hoặc cập nhật Phường/Xã",
+                "search": "Tìm kiếm Phường/Xã",
+                "createForm": "Thêm mới Phường/Xã",
+                "updateForm": "Cập nhật thông tin Phường/Xã"
+            },
+            "created": "Một Phường/Xã mới được tạo với định danh {{ param }}",
+            "updated": "Một Phường/Xã cập nhật với định danh {{ param }}",
+            "deleted": "Một Phường/Xã đã xóa với định danh {{ param }}",
+            "delete": {
+                "question": "Bạn có chắc chắn muốn xóa Phường/Xã {{ id }} không?"
+            },
+            "detail": {
+                "title": "Phường/Xã"
+            },
+            "wardcode": "Mã Phường/Xã",
+            "wardname": "Tên Phường/Xã",
+            "wrdlatitude": "Kinh độ",
+            "wrdlongitude": "Vĩ độ",
+            "active": "Trạng thái",
+            "isdel": "Isdel",
+            "createby": "Người tạo",
+            "createdate": "Ngày tạo",
+            "lastmodifyby": "Người chỉnh",
+            "lastmodifydate": "Ngày chỉnh",
+            "mtdDistrict": "Quận/Huyện",
+            "cifMaster": "Cif Master",
+            "action": "Thao tác",
+            "activated": "Hoạt động",
+            "deactivated": "Không hoạt động"
+        }
+    }
+}

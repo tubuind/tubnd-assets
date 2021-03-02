@@ -1,0 +1,104 @@
+<div>
+    <section class="content-header">
+        <h1 data-translate="astcoreApp.mtdUnit.home.title">Mtd Units</h1>
+    </section>
+
+    <section class="content">
+        <div class="box box-default">
+            <div class="box-header with-border">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xs-8 no-padding-left">
+                            <form name="searchForm" class="form-inline">
+                                <div class="input-group pull-right" >
+                                    <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'astcoreApp.mtdUnit.home.search' | translate }}">
+                                    <span  class="input-group-btn width-min" >
+                                        <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
+                                            <span class="glyphicon glyphicon-search"></span>
+                                        </button>
+                                    </span>
+                                    <span class="input-group-btn width-min" ng-if="vm.currentSearch">
+                                        <button class="btn btn-info" ng-click="vm.clear()">
+                                            <span class="glyphicon glyphicon-trash"></span>
+                                        </button>
+                                    </span>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-xs-4 no-padding-right text-right">
+                            <button class="btn btn-primary" ui-sref="mtd-unit.new" >
+                                <span class="glyphicon glyphicon-plus"></span>
+                                <span class="hidden-xs-down"  data-translate="astcoreApp.mtdUnit.home.createLabel">
+                                    Create new Mtd Unit
+                                </span>
+                            </button>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <jhi-alert></jhi-alert>
+
+            <div class="box-body">
+                <div class="table-responsive">
+                    <table class="jh-table table table-striped">
+                        <thead>
+                        <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                            <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                            <th><span data-translate="astcoreApp.mtdUnit.unitcode">Unitcode</span></th>
+                            <th><span data-translate="astcoreApp.mtdUnit.unitname">Unitname</span></th>
+                            <th><span data-translate="astcoreApp.mtdUnit.active">Active</span></th>
+                            <!--<th jh-sort-by="isdel"><span data-translate="astcoreApp.mtdUnit.isdel">Isdel</span> <span class="glyphicon glyphicon-sort"></span></th>-->
+                            <!--<th jh-sort-by="createby"><span data-translate="astcoreApp.mtdUnit.createby">Createby</span> <span class="glyphicon glyphicon-sort"></span></th>-->
+                            <!--<th jh-sort-by="createdate"><span data-translate="astcoreApp.mtdUnit.createdate">Createdate</span> <span class="glyphicon glyphicon-sort"></span></th>-->
+                            <!--<th jh-sort-by="lastmodifyby"><span data-translate="astcoreApp.mtdUnit.lastmodifyby">Lastmodifyby</span> <span class="glyphicon glyphicon-sort"></span></th>-->
+                            <!--<th jh-sort-by="lastmodifydate"><span data-translate="astcoreApp.mtdUnit.lastmodifydate">Lastmodifydate</span> <span class="glyphicon glyphicon-sort"></span></th>-->
+                            <th><span data-translate="astcoreApp.mtdUnit.action">Action</span></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="mtdUnit in vm.mtdUnits track by mtdUnit.id">
+                            <td><a ui-sref="mtd-unit-detail({id:mtdUnit.id})">{{mtdUnit.id}}</a></td>
+                            <td>{{mtdUnit.unitcode}}</td>
+                            <td>{{mtdUnit.unitname}}</td>
+                            <td data-translate="{{'astcoreApp.EnumStatus.' + mtdUnit.active}}">{{mtdUnit.active}}</td>
+                            <!--<td>{{mtdUnit.isdel}}</td>-->
+                            <!--<td>{{mtdUnit.createby}}</td>-->
+                            <!--<td>{{mtdUnit.createdate | date:'mediumDate'}}</td>-->
+                            <!--<td>{{mtdUnit.lastmodifyby}}</td>-->
+                            <!--<td>{{mtdUnit.lastmodifydate | date:'mediumDate'}}</td>-->
+                            <td>
+                                <!-- <div class="btn-group flex-btn-group-container"> -->
+                                    <button type="submit"
+                                            ui-sref="mtd-unit-detail({id:mtdUnit.id})"
+                                            class="btn btn-info btn-sm">
+                                        <span class="glyphicon glyphicon-eye-open"></span>
+                                        <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                                    </button>
+                                    <button type="submit"
+                                            ui-sref="mtd-unit.edit({id:mtdUnit.id})"
+                                            class="btn btn-primary btn-sm">
+                                        <span class="glyphicon glyphicon-pencil"></span>
+                                        <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                                    </button>
+                                    <button type="submit"
+                                            ui-sref="mtd-unit.delete({id:mtdUnit.id})"
+                                            class="btn btn-danger btn-sm">
+                                        <span class="glyphicon glyphicon-remove-circle"></span>
+                                        <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                                    </button>
+                                <!-- </div> -->
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="text-center">
+                    <jhi-item-count page="vm.page" total="vm.queryCount" items-per-page="vm.itemsPerPage"></jhi-item-count>
+                    <uib-pagination class="pagination-sm" total-items="vm.totalItems" items-per-page="vm.itemsPerPage" ng-model="vm.page" ng-change="vm.transition()"></uib-pagination>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

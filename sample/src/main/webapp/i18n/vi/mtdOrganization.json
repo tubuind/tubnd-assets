@@ -1,0 +1,42 @@
+{
+    "astcoreApp": {
+        "mtdOrganization" : {
+            "home": {
+                "title": "Đơn vị",
+                "createLabel": "Thêm mới",
+                "createOrEditLabel": "Thêm mới hoặc cập nhật Đơn vị",
+                "search": "Tìm kiếm Đơn vị",
+                "createForm": "Thêm mới một Đơn vị",
+                "updateForm": "Cập nhật thông tin Đơn vị"
+            },
+            "created": "Một Đơn vị mới được tạo với định danh {{ param }}",
+            "updated": "Một Đơn vị cập nhật với định danh {{ param }}",
+            "deleted": "Một Đơn vị đã xóa với định danh {{ param }}",
+            "delete": {
+                "question": "Bạn có chắc chắn muốn xóa Đơn vị {{ id }} không?"
+            },
+            "detail": {
+                "title": "Đơn vị"
+            },
+            "organizationcode": "Mã Đơn vị",
+            "organizationname": "Tên Đơn vị",
+            "address": "Địa chỉ",
+            "mobilenum": "Di động",
+            "phonenum": "Điện thoại",
+            "parents": "Đơn vị chủ quản",
+            "active": "Trạng thái",
+            "isdel": "Isdel",
+            "createby": "Người tạo",
+            "createdate": "Ngày tạo",
+            "lastmodifyby": "Người tạo",
+            "lastmodifydate": "Ngày tạo",
+            "cifMaster": "Cif Master",
+            "province": "Tỉnh/TP",
+            "district": "Quận/Huyện",
+            "ward": "Xã/Phường",
+            "deactivated": "Không hoạt động",
+            "activated": "Hoạt động",
+            "action": "Thao tác"
+        }
+    }
+}

@@ -1,0 +1,414 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myCifMasterLabel" ng-show="vm.cifMaster.id == null" data-translate="astcoreApp.cifMaster.home.createForm">Create</h4>
+        <h4 class="modal-title" id="myCifMasterLabel" ng-show="vm.cifMaster.id != null" data-translate="astcoreApp.cifMaster.home.updateForm">Update</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.cifMaster.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.cifMaster.id" readonly />
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label class="control-label" for="field_customercode"><span data-translate="astcoreApp.cifMaster.customercode">Customercode</span><span class="required"> (*)</span></label>
+                    <input type="text" class="form-control" name="customercode" id="field_customercode"
+                           ng-model="vm.cifMaster.customercode"
+                           required  jhi-maxlength="30"/>
+                    <div ng-show="editForm.customercode.$invalid">
+                        <p class="help-block"
+                           ng-show="editForm.customercode.$error.required" data-translate="entity.validation.required">
+                            This field is required.
+                        </p>
+                        <!-- <p class="help-block"
+                           ng-show="editForm.customercode.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="1">
+                            This field is required to be at least 1 characters.
+                        </p>
+                        <p class="help-block"
+                           ng-show="editForm.customercode.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="30">
+                            This field cannot be longer than 30 characters.
+                        </p> -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label class="control-label" for="field_customername"><span  data-translate="astcoreApp.cifMaster.customername">Customername</span><span class="required"> (*)</span></label>
+                    <input type="text" class="form-control" name="customername" id="field_customername"
+                           ng-model="vm.cifMaster.customername"
+                           required  jhi-maxlength="500"/>
+                    <div ng-show="editForm.customername.$invalid">
+                        <p class="help-block"
+                           ng-show="editForm.customername.$error.required" data-translate="entity.validation.required">
+                            This field is required.
+                        </p>
+                        <!-- <p class="help-block"
+                           ng-show="editForm.customername.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="1">
+                            This field is required to be at least 1 characters.
+                        </p>
+                        <p class="help-block"
+                           ng-show="editForm.customername.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="500">
+                            This field cannot be longer than 500 characters.
+                        </p> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label class="control-label" data-translate="astcoreApp.cifMaster.sex" for="field_sex">Sex</label>
+                    <select number-converter class="form-control" name="sex" ng-model="vm.cifMaster.sex" id="field_sex">
+                        <option value="0" data-translate="astcoreApp.EnumSex.0"></option>
+                        <option value="1" data-translate="astcoreApp.EnumSex.1"></option>
+                        <!-- <option value="2" data-translate="astcoreApp.EnumSex.2"></option> -->
+                    </select>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label class="control-label" data-translate="astcoreApp.cifMaster.birthday" for="field_birthday">Birthday</label>
+                    <div class="input-group">
+                        <input id="field_birthday" type="text" class="form-control" name="birthday" uib-datepicker-popup="{{dateformat}}" ng-model="vm.cifMaster.birthday" is-open="vm.datePickerOpenStatus.birthday"/>
+                        <span class="input-group-btn input-group-btn-datetime">
+                            <button type="button" class="btn btn-default" ng-click="vm.openCalendar('birthday')"><i class="glyphicon glyphicon-calendar"></i></button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label class="control-label" for="field_identifycode"><span data-translate="astcoreApp.cifMaster.identifycode">Identifycode</span><span class="required"> (*)</span></span></label>
+                    <input type="text" class="form-control" name="identifycode" id="field_identifycode"
+                           ng-model="vm.cifMaster.identifycode"
+                           required jhi-maxlength="50"/>
+                    <div ng-show="editForm.identifycode.$invalid">
+                        <p class="help-block"
+                           ng-show="editForm.identifycode.$error.required" data-translate="entity.validation.required">
+                            This field is required.
+                        </p>
+                        <!-- <p class="help-block"
+                           ng-show="editForm.identifycode.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="1">
+                            This field is required to be at least 1 characters.
+                        </p>
+                        <p class="help-block"
+                           ng-show="editForm.identifycode.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="50">
+                            This field cannot be longer than 50 characters.
+                        </p> -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label class="control-label" data-translate="astcoreApp.cifMaster.identifydate" for="field_identifydate">Identifydate</label>
+                    <div class="input-group">
+                        <input id="field_identifydate" type="text" class="form-control" name="identifydate" uib-datepicker-popup="{{dateformat}}" ng-model="vm.cifMaster.identifydate" is-open="vm.datePickerOpenStatus.identifydate"
+                        />
+                        <span class="input-group-btn  input-group-btn-datetime">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('identifydate')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label class="control-label" data-translate="astcoreApp.cifMaster.address" for="field_address">Address</label>
+                    <input type="text" class="form-control" name="address" id="field_address"
+                           ng-model="vm.cifMaster.address"
+                           jhi-maxlength="500"/>
+                    <div ng-show="editForm.address.$invalid">
+                        <!-- <p class="help-block"
+                           ng-show="editForm.address.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                            This field is required to be at least 0 characters.
+                        </p>
+                        <p class="help-block"
+                           ng-show="editForm.address.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="500">
+                            This field cannot be longer than 500 characters. -->
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label class="control-label" for="field_mobilenum"><span data-translate="astcoreApp.cifMaster.mobilenum">Mobilenum</span><span class="required"> (*)</span></label>
+                    <input type="text" class="form-control" name="mobilenum" id="field_mobilenum"
+                           ng-model="vm.cifMaster.mobilenum"
+                           required jhi-maxlength="50"/>
+                    <div ng-show="editForm.mobilenum.$invalid">
+                        <p class="help-block"
+                           ng-show="editForm.mobilenum.$error.required" data-translate="entity.validation.required">
+                            This field is required.
+                        </p>
+                        <!-- <p class="help-block"
+                           ng-show="editForm.mobilenum.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="1">
+                            This field is required to be at least 1 characters.
+                        </p>
+                        <p class="help-block"
+                           ng-show="editForm.mobilenum.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="50">
+                            This field cannot be longer than 50 characters.
+                        </p> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label class="control-label" for="field_phonenum"><span data-translate="astcoreApp.cifMaster.phonenum">Phonenum</span><span class="required"> (*)</span></label>
+                    <input type="text" class="form-control" name="phonenum" id="field_phonenum"
+                           ng-model="vm.cifMaster.phonenum"
+                           required jhi-maxlength="50"/>
+                    <div ng-show="editForm.phonenum.$invalid">
+                        <p class="help-block"
+                           ng-show="editForm.phonenum.$error.required" data-translate="entity.validation.required">
+                            This field is required.
+                        </p>
+                        <!-- <p class="help-block"
+                           ng-show="editForm.phonenum.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="1">
+                            This field is required to be at least 1 characters.
+                        </p>
+                        <p class="help-block"
+                           ng-show="editForm.phonenum.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="50">
+                            This field cannot be longer than 50 characters.
+                        </p> -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label class="control-label" data-translate="astcoreApp.cifMaster.customertype" for="field_customertype">Customertype</label>
+                    <select class="form-control" name="customertype" ng-model="vm.cifMaster.customertype" id="field_customertype">
+                        <option value="KH" data-translate="astcoreApp.EnumCustType.KH" selected></option>
+                        <option value="NV" data-translate="astcoreApp.EnumCustType.NV"></option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label class="control-label" data-translate="astcoreApp.cifMaster.custparents" for="field_custparents">Custparents</label>
+                    <select class="form-control" id="field_custparents" name="custparents" ng-model="vm.cifMaster.custparents" ng-options="cust.id as cust.customername for cust in vm.lstCust"            >
+                        <option value=""></option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label class="control-label" data-translate="astcoreApp.cifMaster.note" for="field_note">Note</label>
+                    <input type="text" class="form-control" name="note" id="field_note"
+                           ng-model="vm.cifMaster.note"
+                           jhi-maxlength="10000"/>
+                    <div ng-show="editForm.note.$invalid">
+                        <!-- <p class="help-block"
+                           ng-show="editForm.note.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                            This field is required to be at least 0 characters.
+                        </p>
+                        <p class="help-block"
+                           ng-show="editForm.note.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="1000">
+                            This field cannot be longer than 1000 characters.
+                        </p> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label class="control-label" data-translate="astcoreApp.cifMaster.custlatitude" for="field_custlatitude">Custlatitude</label>
+                    <input type="number" class="form-control" name="custlatitude" id="field_custlatitude"
+                           ng-model="vm.cifMaster.custlatitude"
+                    />
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label class="control-label" data-translate="astcoreApp.cifMaster.custlongitude" for="field_custlongitude">Custlongitude</label>
+                    <input type="number" class="form-control" name="custlongitude" id="field_custlongitude"
+                           ng-model="vm.cifMaster.custlongitude"
+                    />
+                </div>
+            </div>
+        </div>
+
+        <!--<div class="form-group">-->
+            <!--<label class="control-label" data-translate="astcoreApp.cifMaster.active" for="field_active">Active</label>-->
+            <!--<input type="number" class="form-control" name="active" id="field_active"-->
+                    <!--ng-model="vm.cifMaster.active"-->
+                    <!--required min="0" max="10"/>-->
+            <!--<div ng-show="editForm.active.$invalid">-->
+                <!--<p class="help-block"-->
+                    <!--ng-show="editForm.active.$error.required" data-translate="entity.validation.required">-->
+                    <!--This field is required.-->
+                <!--</p>-->
+                <!--<p class="help-block"-->
+                    <!--ng-show="editForm.active.$error.min" data-translate="entity.validation.min" translate-value-min="0">-->
+                    <!--This field should be at least 0.-->
+                <!--</p>-->
+                <!--<p class="help-block"-->
+                    <!--ng-show="editForm.active.$error.max" data-translate="entity.validation.max" translate-value-max="10">-->
+                    <!--This field cannot be more than 10.-->
+                <!--</p>-->
+                <!--<p class="help-block"-->
+                    <!--ng-show="editForm.active.$error.number" data-translate="entity.validation.number">-->
+                    <!--This field should be a number.-->
+                <!--</p>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="form-group">-->
+            <!--<label class="control-label" data-translate="astcoreApp.cifMaster.isdel" for="field_isdel">Isdel</label>-->
+            <!--<input type="number" class="form-control" name="isdel" id="field_isdel"-->
+                    <!--ng-model="vm.cifMaster.isdel"-->
+                    <!--required min="0" max="10"/>-->
+            <!--<div ng-show="editForm.isdel.$invalid">-->
+                <!--<p class="help-block"-->
+                    <!--ng-show="editForm.isdel.$error.required" data-translate="entity.validation.required">-->
+                    <!--This field is required.-->
+                <!--</p>-->
+                <!--<p class="help-block"-->
+                    <!--ng-show="editForm.isdel.$error.min" data-translate="entity.validation.min" translate-value-min="0">-->
+                    <!--This field should be at least 0.-->
+                <!--</p>-->
+                <!--<p class="help-block"-->
+                    <!--ng-show="editForm.isdel.$error.max" data-translate="entity.validation.max" translate-value-max="10">-->
+                    <!--This field cannot be more than 10.-->
+                <!--</p>-->
+                <!--<p class="help-block"-->
+                    <!--ng-show="editForm.isdel.$error.number" data-translate="entity.validation.number">-->
+                    <!--This field should be a number.-->
+                <!--</p>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="form-group">-->
+            <!--<label class="control-label" data-translate="astcoreApp.cifMaster.createby" for="field_createby">Createby</label>-->
+            <!--<input type="text" class="form-control" name="createby" id="field_createby"-->
+                    <!--ng-model="vm.cifMaster.createby"-->
+                    <!--ng-minlength="1" ng-maxlength="50"/>-->
+            <!--<div ng-show="editForm.createby.$invalid">-->
+                <!--<p class="help-block"-->
+                    <!--ng-show="editForm.createby.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="1">-->
+                    <!--This field is required to be at least 1 characters.-->
+                <!--</p>-->
+                <!--<p class="help-block"-->
+                    <!--ng-show="editForm.createby.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="50">-->
+                    <!--This field cannot be longer than 50 characters.-->
+                <!--</p>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="form-group">-->
+            <!--<label class="control-label" data-translate="astcoreApp.cifMaster.createdate" for="field_createdate">Createdate</label>-->
+                <!--<div class="input-group">-->
+                    <!--<input id="field_createdate" type="text" class="form-control" name="createdate" uib-datepicker-popup="{{dateformat}}" ng-model="vm.cifMaster.createdate" is-open="vm.datePickerOpenStatus.createdate"-->
+                    <!--/>-->
+                    <!--<span class="input-group-btn">-->
+                        <!--<button type="button" class="btn btn-default" ng-click="vm.openCalendar('createdate')"><i class="glyphicon glyphicon-calendar"></i></button>-->
+                    <!--</span>-->
+                <!--</div>-->
+        <!--</div>-->
+        <!--<div class="form-group">-->
+            <!--<label class="control-label" data-translate="astcoreApp.cifMaster.lastmodifyby" for="field_lastmodifyby">Lastmodifyby</label>-->
+            <!--<input type="text" class="form-control" name="lastmodifyby" id="field_lastmodifyby"-->
+                    <!--ng-model="vm.cifMaster.lastmodifyby"-->
+                    <!--ng-minlength="1" ng-maxlength="50"/>-->
+            <!--<div ng-show="editForm.lastmodifyby.$invalid">-->
+                <!--<p class="help-block"-->
+                    <!--ng-show="editForm.lastmodifyby.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="1">-->
+                    <!--This field is required to be at least 1 characters.-->
+                <!--</p>-->
+                <!--<p class="help-block"-->
+                    <!--ng-show="editForm.lastmodifyby.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="50">-->
+                    <!--This field cannot be longer than 50 characters.-->
+                <!--</p>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="form-group">-->
+            <!--<label class="control-label" data-translate="astcoreApp.cifMaster.lastmodifydate" for="field_lastmodifydate">Lastmodifydate</label>-->
+                <!--<div class="input-group">-->
+                    <!--<input id="field_lastmodifydate" type="text" class="form-control" name="lastmodifydate" uib-datepicker-popup="{{dateformat}}" ng-model="vm.cifMaster.lastmodifydate" is-open="vm.datePickerOpenStatus.lastmodifydate"-->
+                    <!--/>-->
+                    <!--<span class="input-group-btn">-->
+                        <!--<button type="button" class="btn btn-default" ng-click="vm.openCalendar('lastmodifydate')"><i class="glyphicon glyphicon-calendar"></i></button>-->
+                    <!--</span>-->
+                <!--</div>-->
+        <!--</div>-->
+
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label data-translate="astcoreApp.cifMaster.mtdWard" for="field_mtdWard">Mtd Ward</label>
+                    <select class="form-control" id="field_mtdWard" name="mtdWard" ng-model="vm.cifMaster.mtdWardId" ng-options="mtdWard.id as mtdWard.wardname for mtdWard in vm.mtdwards"            >
+                        <option value=""></option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label data-translate="astcoreApp.cifMaster.mtdOrganization" for="field_mtdOrganization">Mtd Organization</label>
+                    <select class="form-control" id="field_mtdOrganization" name="mtdOrganization" ng-model="vm.cifMaster.mtdOrganizationId" ng-options="mtdOrganization.id as mtdOrganization.organizationname for mtdOrganization in vm.mtdorganizations"            >
+                        <option value=""></option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label data-translate="astcoreApp.cifMaster.mtdEcosectors" for="field_mtdEcosectors">Mtd Ecosectors</label>
+                    <select class="form-control" id="field_mtdEcosectors" name="mtdEcosectors" ng-model="vm.cifMaster.mtdEcosectorsId" ng-options="mtdEcosectors.id as mtdEcosectors.econame for mtdEcosectors in vm.mtdecosectors"            >
+                        <option value=""></option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label data-translate="astcoreApp.cifMaster.mtdCustomergroup" for="field_mtdCustomergroup">Mtd Customergroup</label>
+                    <select class="form-control" id="field_mtdCustomergroup" name="mtdCustomergroup" ng-model="vm.cifMaster.mtdCustomergroupId" ng-options="mtdCustomergroup.id as mtdCustomergroup.custgroupname for mtdCustomergroup in vm.mtdcustomergroups"            >
+                        <option value=""></option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label class="control-label" data-translate="astcoreApp.cifMaster.active" for="field_active">Active</label>
+                    <select number-converter class="form-control" name="active" ng-model="vm.cifMaster.active" id="field_active">
+                        <option value="1" data-translate="astcoreApp.EnumStatus.1">Active</option>
+                        <option value="0" data-translate="astcoreApp.EnumStatus.0">InActive</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-lg-6">
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.close">Close</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+                <i class="fa fa-floppy-o" aria-hidden="true"></i>
+                &nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

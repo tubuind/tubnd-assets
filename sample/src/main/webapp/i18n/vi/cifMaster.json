@@ -1,0 +1,51 @@
+{
+    "astcoreApp": {
+        "cifMaster" : {
+            "home": {
+                "title": "Khách hàng",
+                "createLabel": "Thêm mới",
+                "createOrEditLabel": "Thêm mới hoặc cập nhật Khách hàng",
+                "search": "Tìm kiếm Khách hàng",
+                "createForm": "Thêm mới khách hàng",
+                "updateForm": "Cập nhật khách hàng"
+            },
+            "created": "Thêm mới thông tin thành công",
+            "updated": "Cập nhật thông tin thành công",
+            "deleted": "Xóa thông tin thành công",
+            "delete": {
+                "question": "Bạn có chắc chắn muốn xóa Khách hàng {{ id }} không?"
+            },
+            "detail": {
+                "title": "Thông tin chi tiết khách hàng"
+            },
+            "customercode": "Mã Khách hàng",
+            "customername": "Tên Khách hàng",
+            "sex": "Giới tính",
+            "birthday": "Ngày sinh",
+            "identifycode": "CMT",
+            "identifydate": "Ngày hiệu lực",
+            "address": "Địa chỉ",
+            "mobilenum": "Di động",
+            "phonenum": "Điện thoại",
+            "customertype": "Loại khách hàng",
+            "custparents": "Khách hàng chủ quản",
+            "note": "Ghi chú",
+            "custlatitude": "Vĩ độ",
+            "custlongitude": "Kinh độ",
+            "active": "Trạng thái",
+            "isdel": "Isdel",
+            "createby": "Người tạo",
+            "createdate": "Ngày tạo",
+            "lastmodifyby": "Người sửa",
+            "lastmodifydate": "Ngày sửa",
+            "mtdWard": "Khu vực",
+            "mtdOrganization": "Đơn vị",
+            "mtdEcosectors": "Thành phần kinh tế",
+            "mtdCustomergroup": "Nhóm khách hàng",
+            "cifDevice": "Cif Device",
+            "action": "Thao tác",
+            "activated": "Hoạt động",
+            "deactivated": "Không hoạt động"
+        }
+    }
+}

@@ -1,0 +1,40 @@
+{
+    "astcoreApp": {
+        "deviceInfo" : {
+            "home": {
+                "title": "Device Infos",
+                "createLabel": "Create a new Device Info",
+                "createOrEditLabel": "Create or edit a Device Info",
+                "search": "Search for Device Info",
+                "createForm": "Create a new Device Info",
+                "updateForm": "Update a Device Info"
+            },
+            "created": "A new Device Info is created with identifier {{ param }}",
+            "updated": "A Device Info is updated with identifier {{ param }}",
+            "deleted": "A Device Info is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Device Info {{ id }}?"
+            },
+            "detail": {
+                "title": "Device Info"
+            },
+            "devicecode": "Devicecode",
+            "devicename": "Devicename",
+            "makedate": "Makedate",
+            "note": "Note",
+            "active": "Active",
+            "isdel": "Isdel",
+            "createby": "Createby",
+            "createdate": "Createdate",
+            "lastmodifyby": "Lastmodifyby",
+            "lastmodifydate": "Lastmodifydate",
+            "mtdDevicetype": "Mtd Devicetype",
+            "mtdDevicegroup": "Mtd Devicegroup",
+            "deviceTransaction": "Device Transaction",
+            "cifDevice": "Cif Device",
+            "action": "Action",
+            "activated": "Activated",
+            "Deactivated": "Deactivated"
+        }
+    }
+}

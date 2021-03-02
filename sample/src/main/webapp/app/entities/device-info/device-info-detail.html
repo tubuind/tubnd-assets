@@ -1,0 +1,114 @@
+<div>
+    <section class="content-header">
+        <h1><span data-translate="astcoreApp.deviceInfo.detail.title">Device</span>: <b>{{vm.deviceInfo.deviceCode}}</b></h1>
+    </section>
+
+    <section class="content">
+        <div class="box box-default">
+            <div class="box-header with-border">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <dl class="dl-horizontal jh-entity-details">
+                                <dt><span data-translate="astcoreApp.deviceInfo.devicecode"></span></dt>
+                                <dd>
+                                    <span>{{vm.deviceInfo.devicecode}}</span>
+                                </dd>
+                                <dt><span data-translate="astcoreApp.deviceInfo.mtdDevicetype"></span></dt>
+                                <dd>
+                                    <span>{{vm.deviceInfo.mtdDevicetypename}}</span>
+                                </dd>
+                                <dt><span data-translate="astcoreApp.deviceInfo.makedate"></span></dt>
+                                <dd>
+                                    <span>{{vm.deviceInfo.makedate | date:'mediumDate'}}</span>
+                                </dd>
+                            </dl>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <dl class="dl-horizontal jh-entity-details">
+                                <dt><span data-translate="astcoreApp.deviceInfo.devicename"></span></dt>
+                                <dd>
+                                    <span>{{vm.deviceInfo.devicename}}</span>
+                                </dd>
+                                <dt><span data-translate="astcoreApp.deviceInfo.mtdDevicegroup"></span></dt>
+                                <dd>
+                                    <span>{{vm.deviceInfo.mtdDevicegroupname}}</span>
+                                </dd>
+                                <dt><span data-translate="astcoreApp.deviceInfo.active"></span></dt>
+                                <dd>
+                                    <span data-translate="{{'astcoreApp.EnumStatus.' + vm.deviceInfo.active}}">{{vm.deviceInfo.active}}</span>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <jhi-alert></jhi-alert>
+
+            <div class="box-body">
+
+                <uib-tabset class="nav-tabs-custom" active="activePill" type="tabs">
+                    <uib-tab index="2" heading="{{'astcoreApp.deviceInfo.detail.headMeasurement' | translate}}">
+                        
+                        <!-- <div>
+                            <div class="btn-group btn-group-sm" role="group" aria-label="Small button group"> 
+                                <button ng-click="vm.onChangeChart('bar')" ng-class="{active: (vm.currentChartType == 'bar')}" type="button" class="btn btn-default active" data-translate="astcoreApp.deviceInfo.detail.chartBar"></button>
+                                <button ng-click="vm.onChangeChart('line')" ng-class="{active: (vm.currentChartType == 'line')}" type="button" class="btn btn-default" data-translate="astcoreApp.deviceInfo.detail.chartLine"></button>
+                            </div>
+
+                            <div class="btn-group btn-group-sm" role="group" aria-label="Small button group"> 
+                                <button ng-click="vm.onChangeDays(7)" ng-class="{active: (vm.currentOffsetTime == 7)}" type="button" class="btn btn-default active" data-translate="astcoreApp.deviceInfo.detail.1week"></button>
+                                <button ng-click="vm.onChangeDays(30)" ng-class="{active: (vm.currentOffsetTime == 30)}" type="button" class="btn btn-default" data-translate="astcoreApp.deviceInfo.detail.1month"></button>
+                                <button ng-click="vm.onChangeDays(90)" ng-class="{active: (vm.currentOffsetTime == 90)}" type="button" class="btn btn-default" data-translate="astcoreApp.deviceInfo.detail.3month"></button>
+                            </div>
+                        </div> -->
+
+                        <hr />
+
+
+                        <ng-echarts style="width: 800px; height: 700px;" class="col-md-6 clearfix echarts" ec-config="lineConfig" ec-option="lineOption"></ng-echarts>
+
+                        <ng-echarts style="width: 800px; height: 700px;" class="col-md-6 clearfix echarts" ec-config="gaugeConfig" ec-option="gaugeOption"></ng-echarts>
+
+                        <ng-echarts style="width: 800px; height: 700px;" class="col-md-6 clearfix echarts" ec-config="stackAreaConfig" ec-option="stackAreaOption"></ng-echarts>
+
+                        <br /><br /><br />
+
+                        <div style="height: 400px;">
+                            <rzslider rz-slider-model="verticalSlider.value" rz-slider-options="verticalSlider.options"></rzslider>
+                        </div>
+                        
+                        <!-- <div style="height: 400px;">
+                            <rzslider rz-slider-model="verticalSlider.value" rz-slider-options="verticalSlider.options"></rzslider>
+                        </div>
+
+                        <line-chart config="config" data="data"></line-chart>
+
+                        <gauge-chart config="configGauge" data="dataGauge"></gauge-chart>
+
+                        <area-chart config="configArea" data="dataArea" chart-obj="chartObj"></area-chart> -->
+
+                        <!-- <rzslider rz-slider-model="slider_all_options.minValue" rz-slider-high="slider_all_options.maxValue" rz-slider-options="slider_all_options.options"></rzslider> -->
+
+                        <div style="clear: both;"></div>
+
+                    </uib-tab>
+                </uib-tabset>
+
+                <button type="submit"
+                        ui-sref="{{ vm.previousState }}"
+                        class="btn btn-info">
+                    <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+                </button>
+
+                <!-- <button type="button" ui-sref="device-detail.edit({id:vm.deviceInfo.id})" class="btn btn-primary">
+                    <span class="glyphicon glyphicon-pencil"></span>
+                    <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+                </button> -->
+
+            </div>
+        </div>
+    </section>
+</div>

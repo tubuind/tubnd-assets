@@ -1,0 +1,116 @@
+<div ng-switch="vm.isAuthenticated()" ng-cloak>
+    <section ng-switch-when="true" class="content-header">
+        <h1 data-translate="home.title" class="text-center text-uppercase" ></h1>
+    </section>
+
+    <section ng-switch-when="true" class="content">
+        <div class="row">
+            <div class="col-lg-3 col-xs-6">
+                <!-- small box -->
+                <div class="small-box bg-aqua">
+                    <div class="inner">
+                        <h3>1{{vm.dataOverview.customer}}</h3>
+
+                        <p data-translate="home.overview.customer"></p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion-android-contacts"></i>
+                    </div>
+                    <a ui-sref="cif-master" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-3 col-xs-6">
+                <!-- small box -->
+                <div class="small-box bg-green">
+                    <div class="inner">
+                        <h3>1{{vm.dataOverview.device}}</h3>
+
+                        <p data-translate="home.overview.device"></p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion-ios-calculator"></i>
+                    </div>
+                    <a ui-sref="device-info" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-3 col-xs-6">
+                <!-- small box -->
+                <div class="small-box bg-yellow">
+                    <div class="inner">
+                        <h3>1{{vm.dataOverview.user}}</h3>
+
+                        <p data-translate="home.overview.user"></p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-person-add"></i>
+                    </div>
+                    <a ui-sref="user-management" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-3 col-xs-6">
+                <!-- small box -->
+                <div class="small-box bg-red">
+                    <div class="inner">
+                        <h3>1{{vm.dataOverview.employee}}</h3>
+
+                        <p data-translate="home.overview.area"></p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion-android-pin"></i>
+                    </div>
+                    <a ui-sref="mtd-country" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <!-- ./col -->
+        </div>
+
+        <!--<div class="box box-default">-->
+            <!--<div class="box-header with-border">-->
+                <!--<h3 class="box-title"><i class="fa fa-tachometer"></i> <span data-translate="home.deviceMap"></span></h3>-->
+            <!--</div>-->
+
+            <!--<div class="box-body">-->
+
+                <!--<div id="map-canvas">-->
+                    <!--<ui-gmap-google-map ng-if="vm.mapReady"-->
+                                        <!--center="map.center"-->
+                                        <!--zoom="map.zoom"-->
+                                        <!--dragging="map.dragging"-->
+                                        <!--bounds="map.bounds"-->
+                                        <!--events="map.events"-->
+                                        <!--options="map.options"-->
+                                        <!--pan="true"-->
+                                        <!--control="map.control">-->
+
+                        <!--<ui-gmap-marker ng-repeat="m in map.markers" coords="m" icon="m.icon" click="onMarkerClicked(m)" idKey="m.id" options="m.options">-->
+                            <!--<ui-gmap-window ng-cloak  coords="m.coords" options="map.infoWindowWithCustomClass.options">-->
+                                <!--<div class="m-box-info">-->
+                                    <!--<p>-->
+                                        <!--<b data-translate="iotDevApp.device.deviceCode"></b> : <a ui-sref="device-detail({id: {{m.data.id}}})"><b>{{m.data.deviceCode +' - '+ m.data.deviceName}}</b></a>-->
+                                    <!--</p>-->
+                                    <!--<p>-->
+                                        <!--<b data-translate="iotDevApp.device.deployDate"></b> : {{m.data.deployDate | date}}-->
+                                    <!--</p>-->
+                                    <!--<span>-->
+                                            <!--<b data-translate="iotDevApp.device.customer"></b> : {{m.data.customerCustomerName}}-->
+                                        <!--</span>-->
+                                <!--</div>-->
+
+                                <!--<p class="muted">My marker will stay open when the window is popped up!</p>-->
+                            <!--</ui-gmap-window>-->
+                        <!--</ui-gmap-marker>-->
+
+                    <!--</ui-gmap-google-map>-->
+                <!--</div>-->
+
+            <!--</div>-->
+        <!--</div>-->
+    </section>
+
+    <section ng-switch-when="false" class="content">
+        <div class="welcome-screen"></div>
+    </section>
+</div>

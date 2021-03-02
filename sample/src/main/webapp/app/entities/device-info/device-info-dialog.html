@@ -1,0 +1,216 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title text-center" id="myDeviceInfoLabel" data-translate="astcoreApp.deviceInfo.home.createForm" ng-show="vm.deviceInfo.id == null">Create or edit a Device Info</h4>
+        <h4 class="modal-title text-center" id="myDeviceInfoLabel" data-translate="astcoreApp.deviceInfo.home.updateForm" ng-show="vm.deviceInfo.id != null">Create or edit a Device Info</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.deviceInfo.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.deviceInfo.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_devicecode"><span data-translate="astcoreApp.deviceInfo.devicecode">Devicecode</span><span class="required"> (*)</span></label>
+            <input type="text" class="form-control" name="devicecode" id="field_devicecode"
+                    ng-model="vm.deviceInfo.devicecode"
+                    required  jhi-maxlength="10"/>
+            <div ng-show="editForm.devicecode.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.devicecode.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <!-- <p class="help-block"
+                    ng-show="editForm.devicecode.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="1">
+                    This field is required to be at least 1 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.devicecode.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="10">
+                    This field cannot be longer than 10 characters.
+                </p> -->
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_devicename"><span data-translate="astcoreApp.deviceInfo.devicename">Devicename</span><span class="required"> (*)</span></label>
+            <input type="text" class="form-control" name="devicename" id="field_devicename"
+                    ng-model="vm.deviceInfo.devicename"
+                    required jhi-maxlength="50"/>
+            <div ng-show="editForm.devicename.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.devicename.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <!-- <p class="help-block"
+                    ng-show="editForm.devicename.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="1">
+                    This field is required to be at least 1 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.devicename.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="50">
+                    This field cannot be longer than 50 characters.
+                </p> -->
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label data-translate="astcoreApp.deviceInfo.mtdDevicetype" for="field_mtdDevicetype">Mtd Devicetype</label>
+            <select class="form-control" id="field_mtdDevicetype" name="mtdDevicetype" ng-model="vm.deviceInfo.mtdDevicetypeId" ng-options="mtdDevicetype.id as mtdDevicetype.devicetypename for mtdDevicetype in vm.mtddevicetypes"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="astcoreApp.deviceInfo.mtdDevicegroup" for="field_mtdDevicegroup">Mtd Devicegroup</label>
+            <select class="form-control" id="field_mtdDevicegroup" name="mtdDevicegroup" ng-model="vm.deviceInfo.mtdDevicegroupId" ng-options="mtdDevicegroup.id as mtdDevicegroup.devicegroupname for mtdDevicegroup in vm.mtddevicegroups"            >
+                <option value=""></option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label class="control-label" data-translate="astcoreApp.deviceInfo.makedate" for="field_makedate">Makedate</label>
+                <div class="input-group">
+                    <input id="field_makedate" type="text" class="form-control" name="makedate" uib-datepicker-popup="{{dateformat}}" ng-model="vm.deviceInfo.makedate" is-open="vm.datePickerOpenStatus.makedate"
+                    />
+                    <span class="input-group-btn input-group-btn input-group-btn-datetime">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('makedate')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="astcoreApp.deviceInfo.note" for="field_note">Note</label>
+            <input type="text" class="form-control" name="note" id="field_note"
+                    ng-model="vm.deviceInfo.note"
+                    jhi-maxlength="10000"/>
+            <div ng-show="editForm.note.$invalid">
+                <!-- <p class="help-block"
+                    ng-show="editForm.note.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.note.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="1000">
+                    This field cannot be longer than 1000 characters.
+                </p> -->
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label" data-translate="astcoreApp.deviceInfo.active" for="field_active">Active</label>
+            <select number-converter class="form-control" name="active" ng-model="vm.deviceInfo.active" id="field_active">
+                <option value="1" data-translate="astcoreApp.EnumStatus.1">Active</option>
+                <option value="0" data-translate="astcoreApp.EnumStatus.0">InActive</option>
+            </select>
+        </div>
+
+        <!--<div class="form-group">-->
+            <!--<label class="control-label" data-translate="astcoreApp.deviceInfo.active" for="field_active">Active</label>-->
+            <!--<input type="number" class="form-control" name="active" id="field_active"-->
+                    <!--ng-model="vm.deviceInfo.active"-->
+                    <!--required min="0" max="10"/>-->
+            <!--<div ng-show="editForm.active.$invalid">-->
+                <!--<p class="help-block"-->
+                    <!--ng-show="editForm.active.$error.required" data-translate="entity.validation.required">-->
+                    <!--This field is required.-->
+                <!--</p>-->
+                <!--<p class="help-block"-->
+                    <!--ng-show="editForm.active.$error.min" data-translate="entity.validation.min" translate-value-min="0">-->
+                    <!--This field should be at least 0.-->
+                <!--</p>-->
+                <!--<p class="help-block"-->
+                    <!--ng-show="editForm.active.$error.max" data-translate="entity.validation.max" translate-value-max="10">-->
+                    <!--This field cannot be more than 10.-->
+                <!--</p>-->
+                <!--<p class="help-block"-->
+                    <!--ng-show="editForm.active.$error.number" data-translate="entity.validation.number">-->
+                    <!--This field should be a number.-->
+                <!--</p>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="form-group">-->
+            <!--<label class="control-label" data-translate="astcoreApp.deviceInfo.isdel" for="field_isdel">Isdel</label>-->
+            <!--<input type="number" class="form-control" name="isdel" id="field_isdel"-->
+                    <!--ng-model="vm.deviceInfo.isdel"-->
+                    <!--required min="0" max="10"/>-->
+            <!--<div ng-show="editForm.isdel.$invalid">-->
+                <!--<p class="help-block"-->
+                    <!--ng-show="editForm.isdel.$error.required" data-translate="entity.validation.required">-->
+                    <!--This field is required.-->
+                <!--</p>-->
+                <!--<p class="help-block"-->
+                    <!--ng-show="editForm.isdel.$error.min" data-translate="entity.validation.min" translate-value-min="0">-->
+                    <!--This field should be at least 0.-->
+                <!--</p>-->
+                <!--<p class="help-block"-->
+                    <!--ng-show="editForm.isdel.$error.max" data-translate="entity.validation.max" translate-value-max="10">-->
+                    <!--This field cannot be more than 10.-->
+                <!--</p>-->
+                <!--<p class="help-block"-->
+                    <!--ng-show="editForm.isdel.$error.number" data-translate="entity.validation.number">-->
+                    <!--This field should be a number.-->
+                <!--</p>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="form-group">-->
+            <!--<label class="control-label" data-translate="astcoreApp.deviceInfo.createby" for="field_createby">Createby</label>-->
+            <!--<input type="text" class="form-control" name="createby" id="field_createby"-->
+                    <!--ng-model="vm.deviceInfo.createby"-->
+                    <!--ng-minlength="1" ng-maxlength="50"/>-->
+            <!--<div ng-show="editForm.createby.$invalid">-->
+                <!--<p class="help-block"-->
+                    <!--ng-show="editForm.createby.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="1">-->
+                    <!--This field is required to be at least 1 characters.-->
+                <!--</p>-->
+                <!--<p class="help-block"-->
+                    <!--ng-show="editForm.createby.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="50">-->
+                    <!--This field cannot be longer than 50 characters.-->
+                <!--</p>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="form-group">-->
+            <!--<label class="control-label" data-translate="astcoreApp.deviceInfo.createdate" for="field_createdate">Createdate</label>-->
+                <!--<div class="input-group">-->
+                    <!--<input id="field_createdate" type="text" class="form-control" name="createdate" uib-datepicker-popup="{{dateformat}}" ng-model="vm.deviceInfo.createdate" is-open="vm.datePickerOpenStatus.createdate"-->
+                    <!--/>-->
+                    <!--<span class="input-group-btn">-->
+                        <!--<button type="button" class="btn btn-default" ng-click="vm.openCalendar('createdate')"><i class="glyphicon glyphicon-calendar"></i></button>-->
+                    <!--</span>-->
+                <!--</div>-->
+        <!--</div>-->
+        <!--<div class="form-group">-->
+            <!--<label class="control-label" data-translate="astcoreApp.deviceInfo.lastmodifyby" for="field_lastmodifyby">Lastmodifyby</label>-->
+            <!--<input type="text" class="form-control" name="lastmodifyby" id="field_lastmodifyby"-->
+                    <!--ng-model="vm.deviceInfo.lastmodifyby"-->
+                    <!--ng-minlength="1" ng-maxlength="50"/>-->
+            <!--<div ng-show="editForm.lastmodifyby.$invalid">-->
+                <!--<p class="help-block"-->
+                    <!--ng-show="editForm.lastmodifyby.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="1">-->
+                    <!--This field is required to be at least 1 characters.-->
+                <!--</p>-->
+                <!--<p class="help-block"-->
+                    <!--ng-show="editForm.lastmodifyby.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="50">-->
+                    <!--This field cannot be longer than 50 characters.-->
+                <!--</p>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="form-group">-->
+            <!--<label class="control-label" data-translate="astcoreApp.deviceInfo.lastmodifydate" for="field_lastmodifydate">Lastmodifydate</label>-->
+                <!--<div class="input-group">-->
+                    <!--<input id="field_lastmodifydate" type="text" class="form-control" name="lastmodifydate" uib-datepicker-popup="{{dateformat}}" ng-model="vm.deviceInfo.lastmodifydate" is-open="vm.datePickerOpenStatus.lastmodifydate"-->
+                    <!--/>-->
+                    <!--<span class="input-group-btn">-->
+                        <!--<button type="button" class="btn btn-default" ng-click="vm.openCalendar('lastmodifydate')"><i class="glyphicon glyphicon-calendar"></i></button>-->
+                    <!--</span>-->
+                <!--</div>-->
+        <!--</div>-->
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.close">Close</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+                <i class="fa fa-floppy-o" aria-hidden="true"></i>
+                &nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

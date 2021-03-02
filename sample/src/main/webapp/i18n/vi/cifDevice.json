@@ -1,0 +1,38 @@
+{
+    "astcoreApp": {
+        "cifDevice" : {
+            "home": {
+                "title": "Thiết bị theo khách hàng",
+                "createLabel": "Thêm mới",
+                "createOrEditLabel": "Thêm mới hoặc cập nhật Thiết bị theo khách hàng",
+                "search": "Tìm Thiết bị theo khách hàng",
+                "createForm": "Thêm mới Thiết bị theo khách hàng",
+                "updateForm": "Cập nhật thông tin Thiết bị theo khách hàng"
+            },
+            "created": "Một Thiết bị theo khách hàng mới được tạo với định danh {{ param }}",
+            "updated": "Một Thiết bị theo khách hàng cập nhật với định danh {{ param }}",
+            "deleted": "Một Thiết bị theo khách hàng đã xóa với định danh {{ param }}",
+            "delete": {
+                "question": "Bạn có chắc chắn muốn xóa Thiết bị theo khách hàng {{ id }} không?"
+            },
+            "detail": {
+                "title": "Thiết bị theo khách hàng"
+            },
+            "actiontype": "Loại dịch vụ",
+            "startdate": "Từ ngày",
+            "enddate": "Đến ngày",
+            "isdel": "Isdel",
+            "devicecode": "Devicecode",
+            "createby": "Người tạo",
+            "createdate": "Ngày tạo",
+            "lastmodifyby": "Người sửa",
+            "lastmodifydate": "Ngày sửa",
+            "cifMaster": "Khách hàng",
+            "deviceInfo": "Thiết bị",
+            "active": "Trạng thái",
+            "deactivated": "Không hoạt động",
+            "activated": "Hoạt động",
+            "action": "Thao tác"
+        }
+    }
+}

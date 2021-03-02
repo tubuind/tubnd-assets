@@ -1,0 +1,30 @@
+{
+    "astcoreApp": {
+        "cifAreaDevice" : {
+            "home": {
+                "title": "Cif Area Devices",
+                "createLabel": "Create a new Cif Area Device",
+                "createOrEditLabel": "Create or edit a Cif Area Device",
+                "search": "Search for Cif Area Device",
+                "createForm": "Create a new Cif Area Device",
+                "updateForm": "Update a Cif Area Device"
+            },
+            "created": "A new Cif Area Device is created with identifier {{ param }}",
+            "updated": "A Cif Area Device is updated with identifier {{ param }}",
+            "deleted": "A Cif Area Device is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Cif Area Device {{ id }}?"
+            },
+            "detail": {
+                "title": "Cif Area Device"
+            },
+            "devicecode": "Devicecode",
+            "startdate": "Startdate",
+            "cifArea": "Cif Area",
+            "cifDevice": "Cif Device",
+            "action": "Action",
+            "activated": "Activated",
+            "Deactivated": "Deactivated"
+        }
+    }
+}

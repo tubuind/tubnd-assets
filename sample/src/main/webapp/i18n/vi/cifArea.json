@@ -1,0 +1,38 @@
+{
+    "astcoreApp": {
+        "cifArea" : {
+            "home": {
+                "title": "Khu vực khách hàng",
+                "createLabel": "Thêm mới",
+                "createOrEditLabel": "Thêm mới hoặc cập nhật Khu vực khách hàng",
+                "search": "Tìm Khu vực khách hàng",
+                "createForm": "Thêm mới Khu vực khách hàng",
+                "updateForm": "Cập nhật thông tin Khu vực khách hàng"
+            },
+            "created": "Một Khu vực khách hàng mới được tạo với định danh {{ param }}",
+            "updated": "Một Khu vực khách hàng cập nhật với định danh {{ param }}",
+            "deleted": "Một Khu vực khách hàng đã xóa với định danh {{ param }}",
+            "delete": {
+                "question": "Bạn có chắc chắn muốn xóa Khu vực khách hàng {{ id }} không?"
+            },
+            "detail": {
+                "title": "Khu vực khách hàng"
+            },
+            "cifareaparent": "Mã khu vực Cha",
+            "cifareacode": "Mã khu vực",
+            "cifareaname": "Tên khu vực",
+            "cifareadesc": "Mô tả",
+            "active": "Trạng thái",
+            "isdel": "Isdel",
+            "createby": "Người tạo",
+            "createdate": "Ngày tạo",
+            "lastmodifyby": "Người sửa",
+            "lastmodifydate": "Ngày sửa",
+            "cifMaster": "Khách hàng",
+            "cifAreaDevice": "Cif Area Device",
+            "activated": "Hoạt động",
+            "deactivated": "Không hoạt động",
+            "action": "Thao tác"
+        }
+    }
+}

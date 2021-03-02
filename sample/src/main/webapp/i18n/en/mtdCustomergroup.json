@@ -1,0 +1,29 @@
+{
+    "astcoreApp": {
+        "mtdCustomergroup" : {
+            "home": {
+                "title": "Mtd Customergroups",
+                "createLabel": "Create a new Mtd Customergroup",
+                "createOrEditLabel": "Create or edit a Mtd Customergroup",
+                "search": "Search for Mtd Customergroup"
+            },
+            "created": "A new Mtd Customergroup is created with identifier {{ param }}",
+            "updated": "A Mtd Customergroup is updated with identifier {{ param }}",
+            "deleted": "A Mtd Customergroup is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Mtd Customergroup {{ id }}?"
+            },
+            "detail": {
+                "title": "Mtd Customergroup"
+            },
+            "custgroupname": "Custgroupname",
+            "active": "Active",
+            "isdel": "Isdel",
+            "createby": "Createby",
+            "createdate": "Createdate",
+            "lastmodifyby": "Lastmodifyby",
+            "lastmodifydate": "Lastmodifydate",
+            "cifMaster": "Cif Master"
+        }
+    }
+}

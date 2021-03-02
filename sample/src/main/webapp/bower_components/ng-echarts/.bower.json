@@ -1,0 +1,31 @@
+{
+  "name": "ng-echarts-bower",
+  "version": "3.0.0",
+  "homepage": "https://github.com/lopn/ng-echarts",
+  "description": "ng-echarts add bower",
+  "main": "dist/ng-echarts.js",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "angularjs",
+    "echarts",
+    "angular",
+    "chart"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "angular": "^1.3",
+    "echarts": "~2.2.7"
+  },
+  "devDependencies": {},
+  "_release": "3.0.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "3.0.0",
+    "commit": "bd99ab12c26f24b6a91e3f0e2609402eb47315eb"
+  },
+  "_source": "https://github.com/liekkas/ng-echarts.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/liekkas/ng-echarts.git"
+}

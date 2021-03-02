@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <include file="classpath:config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170530093814_added_entity_MtdDevicetype.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170530093815_added_entity_MtdDevicegroup.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170530093816_added_entity_MtdCountry.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170530093817_added_entity_MtdProvince.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170530093818_added_entity_MtdDistrict.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170530093819_added_entity_MtdWard.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170530093820_added_entity_MtdUnit.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170530093821_added_entity_MtdOrganization.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170530093822_added_entity_MtdEcosectors.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170530093823_added_entity_MtdCustomergroup.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170530093824_added_entity_CifMaster.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170530093825_added_entity_DeviceInfo.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170530093826_added_entity_DeviceTransaction.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170530093827_added_entity_CifDevice.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170702050920_added_entity_CifArea.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170702050921_added_entity_CifAreaDevice.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="classpath:config/liquibase/changelog/20170530093815_added_entity_constraints_MtdDevicegroup.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170530093817_added_entity_constraints_MtdProvince.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170530093818_added_entity_constraints_MtdDistrict.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170530093819_added_entity_constraints_MtdWard.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170530093824_added_entity_constraints_CifMaster.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170530093825_added_entity_constraints_DeviceInfo.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170530093826_added_entity_constraints_DeviceTransaction.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170530093827_added_entity_constraints_CifDevice.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170702050921_added_entity_constraints_CifAreaDevice.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170702050920_added_entity_constraints_CifArea.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
+	
+	<include file="classpath:config/liquibase/changelog/20170702050920_added_entity_constraints_CifArea.xml" relativeToChangelogFile="false"/>
+	<include file="classpath:config/liquibase/changelog/20170702050921_added_entity_constraints_CifAreaDevice.xml" relativeToChangelogFile="false"/>
+</databaseChangeLog>

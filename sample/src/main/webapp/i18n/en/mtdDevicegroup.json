@@ -1,0 +1,36 @@
+{
+    "astcoreApp": {
+        "mtdDevicegroup" : {
+            "home": {
+                "title": "Mtd Devicegroups",
+                "createLabel": "Create a new Mtd Devicegroup",
+                "createOrEditLabel": "Create or edit a Mtd Devicegroup",
+                "search": "Search for Mtd Devicegroup",
+                "createForm": "Create a new Mtd Devicegroup",
+                "updateForm": "Update a Mtd Devicegroup"
+            },
+            "created": "A new Mtd Devicegroup is created with identifier {{ param }}",
+            "updated": "A Mtd Devicegroup is updated with identifier {{ param }}",
+            "deleted": "A Mtd Devicegroup is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Mtd Devicegroup {{ id }}?"
+            },
+            "detail": {
+                "title": "Mtd Devicegroup"
+            },
+            "devicegroupname": "Devicegroupname",
+            "unitcode": "Unitcode",
+            "active": "Active",
+            "isdel": "Isdel",
+            "createby": "Createby",
+            "createdate": "Createdate",
+            "lastmodifyby": "Lastmodifyby",
+            "lastmodifydate": "Lastmodifydate",
+            "deviceInfo": "Device Info",
+            "mtdUnit": "Mtd Unit",
+            "action": "Action",
+            "activated": "Activated",
+            "Deactivated": "Deactivated"
+        }
+    }
+}

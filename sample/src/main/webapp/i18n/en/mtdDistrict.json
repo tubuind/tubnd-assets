@@ -1,0 +1,38 @@
+{
+    "astcoreApp": {
+        "mtdDistrict" : {
+            "home": {
+                "title": "Mtd Districts",
+                "createLabel": "Create a new Mtd District",
+                "createOrEditLabel": "Create or edit a Mtd District",
+                "search": "Search for Mtd District",
+                "createForm": "Create a new Mtd District",
+                "updateForm": "Update a Mtd District"
+            },
+            "created": "A new Mtd District is created with identifier {{ param }}",
+            "updated": "A Mtd District is updated with identifier {{ param }}",
+            "deleted": "A Mtd District is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Mtd District {{ id }}?"
+            },
+            "detail": {
+                "title": "Mtd District"
+            },
+            "districtcode": "Districtcode",
+            "districtname": "Districtname",
+            "dislatitude": "Dislatitude",
+            "dislongitude": "Dislongitude",
+            "active": "Active",
+            "isdel": "Isdel",
+            "createby": "Createby",
+            "createdate": "Createdate",
+            "lastmodifyby": "Lastmodifyby",
+            "lastmodifydate": "Lastmodifydate",
+            "mtdProvince": "Mtd Province",
+            "mtdWard": "Mtd Ward",
+            "action": "Action",
+            "activated": "Activated",
+            "Deactivated": "Deactivated"
+        }
+    }
+}

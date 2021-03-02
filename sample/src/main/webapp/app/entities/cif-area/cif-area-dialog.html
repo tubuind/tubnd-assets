@@ -1,0 +1,184 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title text-center" id="myCifAreaLabel" data-translate="astcoreApp.cifArea.home.createForm" ng-show="vm.cifArea.id === null">Create or edit a Cif Area</h4>
+        <h4 class="modal-title text-center" id="myCifAreaLabel" data-translate="astcoreApp.cifArea.home.updateForm" ng-show="vm.cifArea.id !== null">Create or edit a Cif Area</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.cifArea.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.cifArea.id" readonly />
+        </div>
+        
+        <div class="form-group">
+            <label class="control-label" for="field_cifareacode"><span data-translate="astcoreApp.cifArea.cifareacode">Cifareacode</span><span class="required"> (*)</span></label>
+            <input type="text" class="form-control" name="cifareacode" id="field_cifareacode"
+                    ng-model="vm.cifArea.cifareacode"
+                    required jhi-maxlength="30"/>
+            <div ng-show="editForm.cifareacode.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.cifareacode.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <!-- <p class="help-block"
+                    ng-show="editForm.cifareacode.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="1">
+                    This field is required to be at least 1 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.cifareacode.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="30">
+                    This field cannot be longer than 30 characters.
+                </p> -->
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_cifareaname"><span data-translate="astcoreApp.cifArea.cifareaname">Cifareaname</span><span class="required"> (*)</span></label>
+            <input type="text" class="form-control" name="cifareaname" id="field_cifareaname"
+                    ng-model="vm.cifArea.cifareaname"
+                    required jhi-maxlength="255"/>
+            <div ng-show="editForm.cifareaname.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.cifareaname.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <!-- <p class="help-block"
+                    ng-show="editForm.cifareaname.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="1">
+                    This field is required to be at least 1 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.cifareaname.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="255">
+                    This field cannot be longer than 255 characters.
+                </p> -->
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_cifareadesc"><span data-translate="astcoreApp.cifArea.cifareadesc">Cifareadesc</span><span class="required"> (*)</span></label>
+            <input type="text" class="form-control" name="cifareadesc" id="field_cifareadesc"
+                    ng-model="vm.cifArea.cifareadesc"
+                    required jhi-maxlength="255"/>
+            <div ng-show="editForm.cifareadesc.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.cifareadesc.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <!-- <p class="help-block"
+                    ng-show="editForm.cifareadesc.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="1">
+                    This field is required to be at least 1 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.cifareadesc.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="255">
+                    This field cannot be longer than 255 characters.
+                </p> -->
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="astcoreApp.cifArea.cifareaparent" for="field_cifareaparent">Cifareaparent</label>
+            <select class="form-control" id="field_cifareaparent" name="cifareaparent" ng-model="vm.cifArea.cifareaparent" ng-options="area.id as area.cifareaname for area in vm.lstArea"            >
+                <option value=""></option>
+            </select>        
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="astcoreApp.cifArea.active" for="field_active">Active</label>
+            <select number-converter class="form-control" name="active" ng-model="vm.cifArea.active" id="field_active">
+                <option value="1" data-translate="astcoreApp.EnumStatus.1">Active</option>
+                <option value="0" data-translate="astcoreApp.EnumStatus.0">InActive</option>
+            </select>
+        </div>
+        <!-- <div class="form-group">
+            <label class="control-label" data-translate="astcoreApp.cifArea.isdel" for="field_isdel">Isdel</label>
+            <input type="number" class="form-control" name="isdel" id="field_isdel"
+                    ng-model="vm.cifArea.isdel"
+                    required min="0" max="10"/>
+            <div ng-show="editForm.isdel.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.isdel.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.isdel.$error.min" data-translate="entity.validation.min" translate-value-min="0">
+                    This field should be at least 0.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.isdel.$error.max" data-translate="entity.validation.max" translate-value-max="10">
+                    This field cannot be more than 10.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.isdel.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="astcoreApp.cifArea.createby" for="field_createby">Createby</label>
+            <input type="text" class="form-control" name="createby" id="field_createby"
+                    ng-model="vm.cifArea.createby"
+                    ng-minlength="1" ng-maxlength="50"/>
+            <div ng-show="editForm.createby.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.createby.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="1">
+                    This field is required to be at least 1 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.createby.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="50">
+                    This field cannot be longer than 50 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="astcoreApp.cifArea.createdate" for="field_createdate">Createdate</label>
+                <div class="input-group">
+                    <input id="field_createdate" type="text" class="form-control" name="createdate" uib-datepicker-popup="{{dateformat}}" ng-model="vm.cifArea.createdate" is-open="vm.datePickerOpenStatus.createdate"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('createdate')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="astcoreApp.cifArea.lastmodifyby" for="field_lastmodifyby">Lastmodifyby</label>
+            <input type="text" class="form-control" name="lastmodifyby" id="field_lastmodifyby"
+                    ng-model="vm.cifArea.lastmodifyby"
+                    ng-minlength="1" ng-maxlength="50"/>
+            <div ng-show="editForm.lastmodifyby.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.lastmodifyby.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="1">
+                    This field is required to be at least 1 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.lastmodifyby.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="50">
+                    This field cannot be longer than 50 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="astcoreApp.cifArea.lastmodifydate" for="field_lastmodifydate">Lastmodifydate</label>
+                <div class="input-group">
+                    <input id="field_lastmodifydate" type="text" class="form-control" name="lastmodifydate" uib-datepicker-popup="{{dateformat}}" ng-model="vm.cifArea.lastmodifydate" is-open="vm.datePickerOpenStatus.lastmodifydate"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('lastmodifydate')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div> -->
+
+        <!-- <div class="form-group">
+            <label data-translate="astcoreApp.cifArea.cifMaster" for="field_cifMaster">Cif Master</label>
+            <select class="form-control" id="field_cifMaster" name="cifMaster" ng-model="vm.cifArea.cifMasterId" ng-options="cifMaster.id as cifMaster.id for cifMaster in vm.cifmasters"            >
+                <option value=""></option>
+            </select>
+        </div> -->
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.close">Close</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <i class="fa fa-floppy-o" aria-hidden="true"></i>
+            &nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

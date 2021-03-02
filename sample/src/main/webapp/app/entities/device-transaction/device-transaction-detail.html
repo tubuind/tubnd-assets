@@ -1,0 +1,63 @@
+
+<div>
+    <h2><span data-translate="astcoreApp.deviceTransaction.detail.title">Device Transaction</span> {{vm.deviceTransaction.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="astcoreApp.deviceTransaction.transdate">Transdate</span></dt>
+        <dd>
+            <span>{{vm.deviceTransaction.transdate | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span data-translate="astcoreApp.deviceTransaction.devicecode">Devicecode</span></dt>
+        <dd>
+            <span>{{vm.deviceTransaction.devicecode}}</span>
+        </dd>
+        <dt><span data-translate="astcoreApp.deviceTransaction.currentvalue">Currentvalue</span></dt>
+        <dd>
+            <span>{{vm.deviceTransaction.currentvalue}}</span>
+        </dd>
+        <dt><span data-translate="astcoreApp.deviceTransaction.valuedate">Valuedate</span></dt>
+        <dd>
+            <span>{{vm.deviceTransaction.valuedate | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span data-translate="astcoreApp.deviceTransaction.active">Active</span></dt>
+        <dd>
+            <span>{{vm.deviceTransaction.active}}</span>
+        </dd>
+        <dt><span data-translate="astcoreApp.deviceTransaction.isdel">Isdel</span></dt>
+        <dd>
+            <span>{{vm.deviceTransaction.isdel}}</span>
+        </dd>
+        <dt><span data-translate="astcoreApp.deviceTransaction.createby">Createby</span></dt>
+        <dd>
+            <span>{{vm.deviceTransaction.createby}}</span>
+        </dd>
+        <dt><span data-translate="astcoreApp.deviceTransaction.createdate">Createdate</span></dt>
+        <dd>
+            <span>{{vm.deviceTransaction.createdate | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span data-translate="astcoreApp.deviceTransaction.lastmodifyby">Lastmodifyby</span></dt>
+        <dd>
+            <span>{{vm.deviceTransaction.lastmodifyby}}</span>
+        </dd>
+        <dt><span data-translate="astcoreApp.deviceTransaction.lastmodifydate">Lastmodifydate</span></dt>
+        <dd>
+            <span>{{vm.deviceTransaction.lastmodifydate | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span data-translate="astcoreApp.deviceTransaction.deviceInfo">Device Info</span></dt>
+        <dd>
+            <a ui-sref="device-info-detail({id:vm.deviceTransaction.deviceInfoId})">{{vm.deviceTransaction.deviceInfoId}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="device-transaction-detail.edit({id:vm.deviceTransaction.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

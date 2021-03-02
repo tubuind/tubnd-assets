@@ -1,0 +1,32 @@
+{
+    "astcoreApp": {
+        "deviceTransaction" : {
+            "home": {
+                "title": "Device Transactions",
+                "createLabel": "Create a new Device Transaction",
+                "createOrEditLabel": "Create or edit a Device Transaction",
+                "search": "Search for Device Transaction"
+            },
+            "created": "A new Device Transaction is created with identifier {{ param }}",
+            "updated": "A Device Transaction is updated with identifier {{ param }}",
+            "deleted": "A Device Transaction is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Device Transaction {{ id }}?"
+            },
+            "detail": {
+                "title": "Device Transaction"
+            },
+            "transdate": "Transdate",
+            "devicecode": "Devicecode",
+            "currentvalue": "Currentvalue",
+            "valuedate": "Valuedate",
+            "active": "Active",
+            "isdel": "Isdel",
+            "createby": "Createby",
+            "createdate": "Createdate",
+            "lastmodifyby": "Lastmodifyby",
+            "lastmodifydate": "Lastmodifydate",
+            "deviceInfo": "Device Info"
+        }
+    }
+}

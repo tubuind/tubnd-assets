@@ -1,0 +1,38 @@
+{
+    "astcoreApp": {
+        "cifArea" : {
+            "home": {
+                "title": "Cif Areas",
+                "createLabel": "Create a new Cif Area",
+                "createOrEditLabel": "Create or edit a Cif Area",
+                "search": "Search for Cif Area",
+                "createForm": "Create a Cif Area",
+                "updateForm": "Update a Cif Area"
+            },
+            "created": "A new Cif Area is created with identifier {{ param }}",
+            "updated": "A Cif Area is updated with identifier {{ param }}",
+            "deleted": "A Cif Area is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Cif Area {{ id }}?"
+            },
+            "detail": {
+                "title": "Cif Area"
+            },
+            "cifareaparent": "Cifareaparent",
+            "cifareacode": "Cifareacode",
+            "cifareaname": "Cifareaname",
+            "cifareadesc": "Cifareadesc",
+            "active": "Active",
+            "isdel": "Isdel",
+            "createby": "Createby",
+            "createdate": "Createdate",
+            "lastmodifyby": "Lastmodifyby",
+            "lastmodifydate": "Lastmodifydate",
+            "cifMaster": "Cif Master",
+            "cifAreaDevice": "Cif Area Device",
+            "activated": "Activate",
+            "deactivated": "Deactivate",
+            "action": "Action"
+        }
+    }
+}

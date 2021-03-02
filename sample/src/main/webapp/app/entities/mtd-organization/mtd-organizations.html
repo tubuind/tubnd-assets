@@ -1,0 +1,112 @@
+<div>
+    <section class="content-header">
+        <h1 data-translate="astcoreApp.mtdOrganization.home.title">Mtd Organizations</h1>
+    </section>
+
+    <section class="content">
+        <div class="box box-default">
+            <div class="box-header with-border">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xs-8 no-padding-left">
+                            <form name="searchForm" class="form-inline">
+                                <div class="input-group pull-right" >
+                                    <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'astcoreApp.mtdOrganization.home.search' | translate }}">
+                                    <span  class="input-group-btn width-min" >
+                                        <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
+                                            <span class="glyphicon glyphicon-search"></span>
+                                        </button>
+                                    </span>
+                                    <span class="input-group-btn width-min" ng-if="vm.currentSearch">
+                                        <button class="btn btn-info" ng-click="vm.clear()">
+                                            <span class="glyphicon glyphicon-trash"></span>
+                                        </button>
+                                    </span>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-xs-4 no-padding-right text-right">
+                            <button class="btn btn-primary" ui-sref="mtd-organization.new" >
+                                <span class="glyphicon glyphicon-plus"></span>
+                                <span class="hidden-xs-down"  data-translate="astcoreApp.mtdOrganization.home.createLabel">
+                                    Create new Mtd Organization
+                                </span>
+                            </button>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <jhi-alert></jhi-alert>
+
+            <div class="box-body">
+                <div class="table-responsive">
+                    <table class="jh-table table table-striped">
+                        <thead>
+                        <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                            <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                            <th><span data-translate="astcoreApp.mtdOrganization.organizationcode">Organizationcode</span></th>
+                            <th><span data-translate="astcoreApp.mtdOrganization.organizationname">Organizationname</span></th>
+                            <th><span data-translate="astcoreApp.mtdOrganization.address">Address</span></th>
+                            <th><span data-translate="astcoreApp.mtdOrganization.mobilenum">Mobilenum</span></th>
+                            <th><span data-translate="astcoreApp.mtdOrganization.phonenum">Phonenum</span></th>
+                            <th><span data-translate="astcoreApp.mtdOrganization.parents">Parents</span></th>
+                            <th><span data-translate="astcoreApp.mtdOrganization.active">Active</span></th>
+                            <!--<th jh-sort-by="isdel"><span data-translate="astcoreApp.mtdOrganization.isdel">Isdel</span> <span class="glyphicon glyphicon-sort"></span></th>-->
+                            <!--<th jh-sort-by="createby"><span data-translate="astcoreApp.mtdOrganization.createby">Createby</span> <span class="glyphicon glyphicon-sort"></span></th>-->
+                            <!--<th jh-sort-by="createdate"><span data-translate="astcoreApp.mtdOrganization.createdate">Createdate</span> <span class="glyphicon glyphicon-sort"></span></th>-->
+                            <!--<th jh-sort-by="lastmodifyby"><span data-translate="astcoreApp.mtdOrganization.lastmodifyby">Lastmodifyby</span> <span class="glyphicon glyphicon-sort"></span></th>-->
+                            <!--<th jh-sort-by="lastmodifydate"><span data-translate="astcoreApp.mtdOrganization.lastmodifydate">Lastmodifydate</span> <span class="glyphicon glyphicon-sort"></span></th>-->
+                            <th><span data-translate="astcoreApp.mtdOrganization.action">Action</span></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="mtdOrganization in vm.mtdOrganizations track by mtdOrganization.id">
+                            <td><a ui-sref="mtd-organization-detail({id:mtdOrganization.id})">{{mtdOrganization.id}}</a></td>
+                            <td>{{mtdOrganization.organizationcode}}</td>
+                            <td>{{mtdOrganization.organizationname}}</td>
+                            <td>{{mtdOrganization.address}}</td>
+                            <td>{{mtdOrganization.mobilenum}}</td>
+                            <td>{{mtdOrganization.phonenum}}</td>
+                            <td>{{mtdOrganization.parents}}</td>
+                            <td data-translate="{{'astcoreApp.EnumStatus.' + mtdOrganization.active}}">{{mtdOrganization.active}}</td>
+                            <!--<td>{{mtdOrganization.isdel}}</td>-->
+                            <!--<td>{{mtdOrganization.createby}}</td>-->
+                            <!--<td>{{mtdOrganization.createdate | date:'mediumDate'}}</td>-->
+                            <!--<td>{{mtdOrganization.lastmodifyby}}</td>-->
+                            <!--<td>{{mtdOrganization.lastmodifydate | date:'mediumDate'}}</td>-->
+                            <td class="text-right">
+                                <div class="btn-group flex-btn-group-container">
+                                    <button type="submit"
+                                            ui-sref="mtd-organization-detail({id:mtdOrganization.id})"
+                                            class="btn btn-info btn-sm">
+                                        <span class="glyphicon glyphicon-eye-open"></span>
+                                        <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                                    </button>
+                                    <button type="submit"
+                                            ui-sref="mtd-organization.edit({id:mtdOrganization.id})"
+                                            class="btn btn-primary btn-sm">
+                                        <span class="glyphicon glyphicon-pencil"></span>
+                                        <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                                    </button>
+                                    <button type="submit"
+                                            ui-sref="mtd-organization.delete({id:mtdOrganization.id})"
+                                            class="btn btn-danger btn-sm">
+                                        <span class="glyphicon glyphicon-remove-circle"></span>
+                                        <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="text-center">
+                    <jhi-item-count page="vm.page" total="vm.queryCount" items-per-page="vm.itemsPerPage"></jhi-item-count>
+                    <uib-pagination class="pagination-sm" total-items="vm.totalItems" items-per-page="vm.itemsPerPage" ng-model="vm.page" ng-change="vm.transition()"></uib-pagination>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

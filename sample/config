@@ -1,0 +1,10 @@
+[core]
+	bare = true
+	repositoryformatversion = 0
+	filemode = false
+	symlinks = false
+	ignorecase = true
+[remote "origin"]
+	url = https://michaleking@bitbucket.org/michaleking/astcore.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+	pushurl = https://michaleking@bitbucket.org/michaleking/astcore.git

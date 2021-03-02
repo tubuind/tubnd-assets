@@ -1,0 +1,72 @@
+
+<div>
+    <section class="content">
+        <div class="box box-default">
+            <div class="box-body">
+                <h2 class="text-center"><span data-translate="astcoreApp.cifArea.detail.title">Cif Area</span> {{vm.cifArea.id}}</h2>
+                <hr>
+                <jhi-alert-error></jhi-alert-error>
+                <dl class="dl-horizontal jh-entity-details">
+                    <dt><span data-translate="astcoreApp.cifArea.cifareaparent">Cifareaparent</span></dt>
+                    <dd>
+                        <span>{{vm.cifArea.cifareaparent}}</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.cifArea.cifareacode">Cifareacode</span></dt>
+                    <dd>
+                        <span>{{vm.cifArea.cifareacode}}</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.cifArea.cifareaname">Cifareaname</span></dt>
+                    <dd>
+                        <span>{{vm.cifArea.cifareaname}}</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.cifArea.cifareadesc">Cifareadesc</span></dt>
+                    <dd>
+                        <span>{{vm.cifArea.cifareadesc}}</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.cifArea.active">Active</span></dt>
+                    <dd>
+                        <span class="label label-danger" ng-show="!vm.cifArea.active"
+                            data-translate="astcoreApp.cifArea.deactivated">Deactivated</span>
+                        <span class="label label-success" ng-show="vm.cifArea.active"
+                            data-translate="astcoreApp.cifArea.activated">Activated</span>
+                    </dd>
+                    <!-- <dt><span data-translate="astcoreApp.cifArea.isdel">Isdel</span></dt>
+                    <dd>
+                        <span>{{vm.cifArea.isdel}}</span>
+                    </dd> -->
+                    <dt><span data-translate="astcoreApp.cifArea.createby">Createby</span></dt>
+                    <dd>
+                        <span>{{vm.cifArea.createby}}</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.cifArea.createdate">Createdate</span></dt>
+                    <dd>
+                        <span>{{vm.cifArea.createdate | date:'mediumDate'}}</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.cifArea.lastmodifyby">Lastmodifyby</span></dt>
+                    <dd>
+                        <span>{{vm.cifArea.lastmodifyby}}</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.cifArea.lastmodifydate">Lastmodifydate</span></dt>
+                    <dd>
+                        <span>{{vm.cifArea.lastmodifydate | date:'mediumDate'}}</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.cifArea.cifMaster">Cif Master</span></dt>
+                    <dd>
+                        <a ui-sref="cif-master-detail({id:vm.cifArea.cifMasterId})">{{vm.cifArea.cifMasterName}}</a>
+                    </dd>
+                </dl>
+
+                <button type="submit"
+                        ui-sref="{{ vm.previousState }}"
+                        class="btn btn-info">
+                    <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+                </button>
+
+                <!-- <button type="button" ui-sref="cif-area-detail.edit({id:vm.cifArea.id})" class="btn btn-primary">
+                    <span class="glyphicon glyphicon-pencil"></span>
+                    <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+                </button> -->
+            </div>
+        </div>
+    </section>
+</div>

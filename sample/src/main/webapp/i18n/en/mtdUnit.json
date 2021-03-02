@@ -1,0 +1,36 @@
+{
+    "astcoreApp": {
+        "mtdUnit" : {
+            "home": {
+                "title": "Mtd Units",
+                "createLabel": "Create a new Mtd Unit",
+                "createOrEditLabel": "Create or edit a Mtd Unit",
+                "search": "Search for Mtd Unit",
+                "createForm": "Create a Mtd Unit",
+                "updateForm": "Update a Mtd Unit"
+            },
+            "created": "A new Mtd Unit is created with identifier {{ param }}",
+            "updated": "A Mtd Unit is updated with identifier {{ param }}",
+            "deleted": "A Mtd Unit is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Mtd Unit {{ id }}?"
+            },
+            "detail": {
+                "title": "Mtd Unit"
+            },
+            "unitcode": "Unitcode",
+            "unitname": "Unitname",
+            "active": "Active",
+            "isdel": "Isdel",
+            "createby": "Createby",
+            "createdate": "Createdate",
+            "lastmodifyby": "Lastmodifyby",
+            "lastmodifydate": "Lastmodifydate",
+            "mtdDevicegroup": "Mtd Devicegroup",
+            "deactivated": "Deactivated",
+            "activated": "Activated",
+            "action": "Action"
+
+        }
+    }
+}

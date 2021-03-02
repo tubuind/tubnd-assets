@@ -1,0 +1,172 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title text-center" id="myDeviceTransactionLabel" data-translate="astcoreApp.deviceTransaction.detail.title">Device Transaction</span> {{vm.deviceTransaction.id}}</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.deviceTransaction.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.deviceTransaction.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="astcoreApp.deviceTransaction.transdate" for="field_transdate">Transdate</label>
+                <div class="input-group">
+                    <input id="field_transdate" type="text" class="form-control" name="transdate" uib-datepicker-popup="{{dateformat}}" ng-model="vm.deviceTransaction.transdate" is-open="vm.datePickerOpenStatus.transdate" 
+                    />
+                    <span class="input-group-btn input-group-btn-datetime">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('transdate')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="astcoreApp.deviceTransaction.devicecode" for="field_devicecode">Devicecode</label>
+            <input type="text" class="form-control" name="devicecode" id="field_devicecode"
+                    ng-model="vm.deviceTransaction.devicecode"
+                    required  jhi-maxlength="50" />
+            <div ng-show="editForm.devicecode.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.devicecode.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <!-- <p class="help-block"
+                    ng-show="editForm.devicecode.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="1">
+                    This field is required to be at least 1 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.devicecode.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="50">
+                    This field cannot be longer than 50 characters.
+                </p> -->
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label" data-translate="astcoreApp.deviceTransaction.type" for="field_currentvalue">Type</label>
+            <input type="number" class="form-control" name="valuetype" id="field_valuetype"
+                    ng-model="vm.deviceTransaction.valuetype" 
+                    />
+        </div>
+
+        <div class="form-group">
+            <label class="control-label" data-translate="astcoreApp.deviceTransaction.currentvalue" for="field_currentvalue">Currentvalue</label>
+            <input type="number" class="form-control" name="currentvalue" id="field_currentvalue"
+                    ng-model="vm.deviceTransaction.currentvalue" 
+                    />
+        </div>
+
+        <div class="form-group">
+            <label class="control-label" data-translate="astcoreApp.deviceTransaction.valuedate" for="field_valuedate">Valuedate</label>
+                <div class="input-group">
+                    <input id="field_valuedate" type="text" class="form-control" name="valuedate" uib-datepicker-popup="{{dateformat}}" ng-model="vm.deviceTransaction.valuedate" is-open="vm.datePickerOpenStatus.valuedate" 
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('valuedate')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label" data-translate="astcoreApp.deviceTransaction.active" for="field_active">Active</label>
+            <select number-converter class="form-control" name="active" ng-model="vm.deviceTransaction.active" id="field_active">
+                <option value="1" data-translate="astcoreApp.EnumStatus.1">Active</option>
+                <option value="0" data-translate="astcoreApp.EnumStatus.0">InActive</option>
+            </select>
+        </div>
+
+        <!-- <div class="form-group">
+            <label class="control-label" data-translate="astcoreApp.deviceTransaction.isdel" for="field_isdel">Isdel</label>
+            <input type="number" class="form-control" name="isdel" id="field_isdel"
+                    ng-model="vm.deviceTransaction.isdel"
+                    required min="0" max="10" readonly/>
+            <div ng-show="editForm.isdel.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.isdel.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.isdel.$error.min" data-translate="entity.validation.min" translate-value-min="0">
+                    This field should be at least 0.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.isdel.$error.max" data-translate="entity.validation.max" translate-value-max="10">
+                    This field cannot be more than 10.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.isdel.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="astcoreApp.deviceTransaction.createby" for="field_createby">Createby</label>
+            <input type="text" class="form-control" name="createby" id="field_createby"
+                    ng-model="vm.deviceTransaction.createby"
+                    ng-minlength="1" ng-maxlength="50" readonly/>
+            <div ng-show="editForm.createby.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.createby.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="1">
+                    This field is required to be at least 1 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.createby.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="50">
+                    This field cannot be longer than 50 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="astcoreApp.deviceTransaction.createdate" for="field_createdate">Createdate</label>
+                <div class="input-group">
+                    <input id="field_createdate" type="text" class="form-control" name="createdate" uib-datepicker-popup="{{dateformat}}" ng-model="vm.deviceTransaction.createdate" is-open="vm.datePickerOpenStatus.createdate" readonly
+                    />
+                    <span class="input-group-btn">
+                        <button ng-disabled="true" type="button" class="btn btn-default" ng-click="vm.openCalendar('createdate')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div> -->
+        <div class="form-group">
+            <label class="control-label" data-translate="astcoreApp.deviceTransaction.lastmodifyby" for="field_lastmodifyby">Lastmodifyby</label>
+            <input type="text" class="form-control" name="lastmodifyby" id="field_lastmodifyby"
+                    ng-model="vm.deviceTransaction.lastmodifyby"
+                    ng-minlength="1" ng-maxlength="50" readonly/>
+            <div ng-show="editForm.lastmodifyby.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.lastmodifyby.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="1">
+                    This field is required to be at least 1 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.lastmodifyby.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="50">
+                    This field cannot be longer than 50 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="astcoreApp.deviceTransaction.lastmodifydate" for="field_lastmodifydate">Lastmodifydate</label>
+                <div class="input-group">
+                    <input id="field_lastmodifydate" type="text" class="form-control" name="lastmodifydate" uib-datepicker-popup="{{dateformat}}" ng-model="vm.deviceTransaction.lastmodifydate" is-open="vm.datePickerOpenStatus.lastmodifydate" readonly
+                    />
+                    <span class="input-group-btn input-group-btn-datetime">
+                        <button ng-disabled="true" type="button" class="btn btn-default" ng-click="vm.openCalendar('lastmodifydate')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+
+        <div class="form-group">
+            <label data-translate="astcoreApp.deviceTransaction.deviceInfo" for="field_deviceInfo">Device Info</label>
+            <select class="form-control" id="field_deviceInfo" name="deviceInfo" ng-model="vm.deviceTransaction.deviceInfoId" ng-options="deviceInfo.id as deviceInfo.devicename for deviceInfo in vm.deviceinfos" >
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.close">Close</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

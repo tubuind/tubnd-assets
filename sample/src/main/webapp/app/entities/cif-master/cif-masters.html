@@ -1,0 +1,146 @@
+<div>
+    <section class="content-header">
+        <h1 data-translate="astcoreApp.cifMaster.home.title">Cif Masters</h1>
+    </section>
+
+    <section class="content">
+        <div class="box box-default">
+            <div class="box-header with-border">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xs-8 no-padding-left">
+                            <form name="searchForm" class="form-inline">
+                                    <div class="input-group pull-right" >
+                                        <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'astcoreApp.cifMaster.home.search' | translate }}">
+                                        <span  class="input-group-btn width-min" >
+                                            <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
+                                                <span class="glyphicon glyphicon-search"></span>
+                                            </button>
+                                        </span>
+                                        <span class="input-group-btn width-min" ng-if="vm.currentSearch">
+                                            <button class="btn btn-info" ng-click="vm.clear()">
+                                                <span class="glyphicon glyphicon-trash"></span>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </form>
+                        </div>
+                        <div class="col-xs-4 no-padding-right text-right">
+                            <button class="btn btn-primary" ui-sref="cif-master.new" >
+                                <span class="glyphicon glyphicon-plus"></span>
+                                <span class="hidden-xs-down"  data-translate="astcoreApp.cifMaster.home.createLabel">
+                                    Create new Cif Master
+                                </span>
+                            </button>       
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <jhi-alert></jhi-alert>
+
+            <div class="box-body">
+                <div class="table-responsive">
+                    <table class="jh-table table table-striped">
+                        <thead>
+                        <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                            <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                            <th><span data-translate="astcoreApp.cifMaster.customercode">Customercode</span></th>
+                            <th><span data-translate="astcoreApp.cifMaster.customername">Customername</span></th>
+                            <!--<th jh-sort-by="sex"><span data-translate="astcoreApp.cifMaster.sex">Sex</span> <span class="glyphicon glyphicon-sort"></span></th>-->
+                            <!--<th jh-sort-by="birthday"><span data-translate="astcoreApp.cifMaster.birthday">Birthday</span> <span class="glyphicon glyphicon-sort"></span></th>-->
+                            <th><span data-translate="astcoreApp.cifMaster.identifycode">Identifycode</span></th>
+                            <th><span data-translate="astcoreApp.cifMaster.identifydate">Identifydate</span></th>
+                            <th><span data-translate="astcoreApp.cifMaster.address">Address</span></span></th>
+                            <th><span data-translate="astcoreApp.cifMaster.mobilenum">Mobilenum</span></th>
+                            <th><span data-translate="astcoreApp.cifMaster.phonenum">Phonenum</span></th>
+                            <th><span data-translate="astcoreApp.cifMaster.customertype">Customertype</span></th>
+                            <!--<th jh-sort-by="custparents"><span data-translate="astcoreApp.cifMaster.custparents">Custparents</span> <span class="glyphicon glyphicon-sort"></span></th>-->
+                            <!--<th jh-sort-by="note"><span data-translate="astcoreApp.cifMaster.note">Note</span> <span class="glyphicon glyphicon-sort"></span></th>-->
+                            <!--<th jh-sort-by="custlatitude"><span data-translate="astcoreApp.cifMaster.custlatitude">Custlatitude</span> <span class="glyphicon glyphicon-sort"></span></th>-->
+                            <!--<th jh-sort-by="custlongitude"><span data-translate="astcoreApp.cifMaster.custlongitude">Custlongitude</span> <span class="glyphicon glyphicon-sort"></span></th>-->
+                            <th><span data-translate="astcoreApp.cifMaster.active">Active</span></th>
+                            <!--<th jh-sort-by="isdel"><span data-translate="astcoreApp.cifMaster.isdel">Isdel</span> <span class="glyphicon glyphicon-sort"></span></th>-->
+                            <!--<th jh-sort-by="createby"><span data-translate="astcoreApp.cifMaster.createby">Createby</span> <span class="glyphicon glyphicon-sort"></span></th>-->
+                            <!--<th jh-sort-by="createdate"><span data-translate="astcoreApp.cifMaster.createdate">Createdate</span> <span class="glyphicon glyphicon-sort"></span></th>-->
+                            <!--<th jh-sort-by="lastmodifyby"><span data-translate="astcoreApp.cifMaster.lastmodifyby">Lastmodifyby</span> <span class="glyphicon glyphicon-sort"></span></th>-->
+                            <!--<th jh-sort-by="lastmodifydate"><span data-translate="astcoreApp.cifMaster.lastmodifydate">Lastmodifydate</span> <span class="glyphicon glyphicon-sort"></span></th>-->
+
+                            <!-- <th jh-sort-by="mtdWardId"><span data-translate="astcoreApp.cifMaster.mtdWard">Mtd Ward</span> <span class="glyphicon glyphicon-sort"></span></th>
+                            <th jh-sort-by="mtdOrganizationId"><span data-translate="astcoreApp.cifMaster.mtdOrganization">Mtd Organization</span> <span class="glyphicon glyphicon-sort"></span></th>
+                            <th jh-sort-by="mtdEcosectorsId"><span data-translate="astcoreApp.cifMaster.mtdEcosectors">Mtd Ecosectors</span> <span class="glyphicon glyphicon-sort"></span></th>
+                            <th jh-sort-by="mtdCustomergroupId"><span data-translate="astcoreApp.cifMaster.mtdCustomergroup">Mtd Customergroup</span> <span class="glyphicon glyphicon-sort"></span></th> -->
+                            <th><span data-translate="astcoreApp.cifMaster.action">Active</span></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="cifMaster in vm.cifMasters track by cifMaster.id">
+                            <td><a ui-sref="cif-master-detail({id:cifMaster.id})">{{cifMaster.id}}</a></td>
+                            <td>{{cifMaster.customercode}}</td>
+                            <td>{{cifMaster.customername}}</td>
+                            <!--<td>{{cifMaster.sex}}</td>-->
+                            <!--<td>{{cifMaster.birthday | date:'mediumDate'}}</td>-->
+                            <td>{{cifMaster.identifycode}}</td>
+                            <td>{{cifMaster.identifydate | date:'mediumDate'}}</td>
+                            <td>{{cifMaster.address}}</td>
+                            <td>{{cifMaster.mobilenum}}</td>
+                            <td>{{cifMaster.phonenum}}</td>
+                            <td data-translate="{{'astcoreApp.EnumCustType.' + cifMaster.customertype}}">{{cifMaster.customertype}}</td>
+                            <!--<td>{{cifMaster.custparents}}</td>-->
+                            <!--<td>{{cifMaster.note}}</td>-->
+                            <!--<td>{{cifMaster.custlatitude}}</td>-->
+                            <!--<td>{{cifMaster.custlongitude}}</td>-->
+                            <td data-translate="{{'astcoreApp.EnumStatus.' + cifMaster.active}}">{{cifMaster.active}}</td>
+                            <!--<td>{{cifMaster.isdel}}</td>-->
+                            <!--<td>{{cifMaster.createby}}</td>-->
+                            <!--<td>{{cifMaster.createdate | date:'mediumDate'}}</td>-->
+                            <!--<td>{{cifMaster.lastmodifyby}}</td>-->
+                            <!--<td>{{cifMaster.lastmodifydate | date:'mediumDate'}}</td>-->
+                            
+                            <!-- <td>
+                                <a ui-sref="mtd-ward-detail({id:cifMaster.mtdWardId})">{{cifMaster.mtdWardId}}</a>
+                            </td>
+                            <td>
+                                <a ui-sref="mtd-organization-detail({id:cifMaster.mtdOrganizationId})">{{cifMaster.mtdOrganizationId}}</a>
+                            </td>
+                            <td>
+                                <a ui-sref="mtd-ecosectors-detail({id:cifMaster.mtdEcosectorsId})">{{cifMaster.mtdEcosectorsId}}</a>
+                            </td>
+                            <td>
+                                <a ui-sref="mtd-customergroup-detail({id:cifMaster.mtdCustomergroupId})">{{cifMaster.mtdCustomergroupId}}</a>
+                            </td> -->
+                            <td class="text-right">
+                                <div class="btn-group flex-btn-group-container">
+                                    <button type="submit"
+                                            ui-sref="cif-master-detail({id:cifMaster.id})"
+                                            class="btn btn-info btn-sm">
+                                        <span class="glyphicon glyphicon-eye-open"></span>
+                                        <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                                    </button>
+                                    <button type="submit"
+                                            ui-sref="cif-master.edit({id:cifMaster.id})"
+                                            class="btn btn-primary btn-sm">
+                                        <span class="glyphicon glyphicon-pencil"></span>
+                                        <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                                    </button>
+                                    <button type="submit"
+                                            ui-sref="cif-master.delete({id:cifMaster.id})"
+                                            class="btn btn-danger btn-sm">
+                                        <span class="glyphicon glyphicon-remove-circle"></span>
+                                        <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="text-center">
+                    <jhi-item-count page="vm.page" total="vm.queryCount" items-per-page="vm.itemsPerPage"></jhi-item-count>
+                    <uib-pagination class="pagination-sm" total-items="vm.totalItems" items-per-page="vm.itemsPerPage" ng-model="vm.page" ng-change="vm.transition()"></uib-pagination>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+

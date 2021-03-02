@@ -1,0 +1,39 @@
+{
+    "astcoreApp": {
+        "mtdProvince" : {
+            "home": {
+                "title": "Mtd Provinces",
+                "createLabel": "Create a new Mtd Province",
+                "createOrEditLabel": "Create or edit a Mtd Province",
+                "search": "Search for Mtd Province",
+                "createForm": "Create a new Mtd Province",
+                "updateForm": "Update a new Mtd Province"
+            },
+            "created": "A new Mtd Province is created with identifier {{ param }}",
+            "updated": "A Mtd Province is updated with identifier {{ param }}",
+            "deleted": "A Mtd Province is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Mtd Province {{ id }}?"
+            },
+            "detail": {
+                "title": "Mtd Province"
+            },
+            "provincecode": "Provincecode",
+            "provincename": "Provincename",
+            "prolatitude": "Prolatitude",
+            "prolongitude": "Prolongitude",
+            "countryname": "Countryname",
+            "status": "Status",
+            "isdel": "Isdel",
+            "createby": "Createby",
+            "createdate": "Createdate",
+            "lastmodifyby": "Lastmodifyby",
+            "lastmodifydate": "Lastmodifydate",
+            "mtdCountry": "Mtd Country",
+            "mtdDistrict": "Mtd District",
+            "Acitvated": "Actived",
+            "Deacitvated": "Actived",
+            "action": "Action"
+        }
+    }
+}

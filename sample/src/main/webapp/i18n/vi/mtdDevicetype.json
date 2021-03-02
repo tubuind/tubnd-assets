@@ -1,0 +1,34 @@
+{
+    "astcoreApp": {
+        "mtdDevicetype" : {
+            "home": {
+                "title": "Loại thiết bị",
+                "createLabel": "Thêm mới",
+                "createOrEditLabel": "Thêm mới hoặc cập nhật Loại thiết bị",
+                "search": "Tìm kiếm Loại thiết bị",
+                "createForm": "Thêm mới một Loại thiết bị",
+                "updateForm": "Cập nhật thông tin Loại thiết bị"
+            },
+            "created": "Một Loại thiết bị mới được tạo với định danh {{ param }}",
+            "updated": "Một Loại thiết bị cập nhật với định danh {{ param }}",
+            "deleted": "Một Loại thiết bị đã xóa với định danh {{ param }}",
+            "delete": {
+                "question": "Bạn có chắc chắn muốn xóa Loại thiết bị {{ id }} không?"
+            },
+            "detail": {
+                "title": "Loại thiết bị"
+            },
+            "devicetypename": "Tên Loại thiết bị",
+            "active": "Trạng thái",
+            "isdel": "Isdel",
+            "createby": "Người tạo",
+            "createdate": "Ngày tạo",
+            "lastmodifyby": "Người sửa",
+            "lastmodifydate": "Ngày sửa",
+            "deviceInfo": "Thiết bị",
+            "deactivated": "Không hoạt động",
+            "activated": "Hoạt động",
+            "action": "Thao tác"
+        }
+    }
+}

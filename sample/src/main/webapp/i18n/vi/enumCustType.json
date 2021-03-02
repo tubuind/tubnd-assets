@@ -1,0 +1,8 @@
+{
+    "astcoreApp": {
+        "EnumCustType" : {
+            "NV": "Nhân viên",
+            "KH": "Khách hàng"
+        }
+    }
+}

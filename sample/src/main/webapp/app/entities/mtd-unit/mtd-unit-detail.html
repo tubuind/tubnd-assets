@@ -1,0 +1,59 @@
+<div>
+    <section class="content">
+        <div class="box box-default">
+            <div class="box-body">
+                <h2 class="text-center"><span data-translate="astcoreApp.mtdUnit.detail.title">Mtd Unit</span> {{vm.mtdUnit.id}}</h2>
+                <hr>
+                <jhi-alert-error></jhi-alert-error>
+                <dl class="dl-horizontal jh-entity-details">
+                    <dt><span data-translate="astcoreApp.mtdUnit.unitcode">Unitcode</span></dt>
+                    <dd>
+                        <span>{{vm.mtdUnit.unitcode}}</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.mtdUnit.unitname">Unitname</span></dt>
+                    <dd>
+                        <span>{{vm.mtdUnit.unitname}}</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.mtdUnit.active">Active</span></dt>
+                    <dd>
+                        <span class="label label-danger" ng-show="!vm.mtdUnit.active"
+                            data-translate="astcoreApp.mtdUnit.deactivated">Deactivated</span>
+                        <span class="label label-success" ng-show="vm.mtdUnit.active"
+                            data-translate="astcoreApp.mtdUnit.activated">Activated</span>
+                    </dd>
+                    <!-- <dt><span data-translate="astcoreApp.mtdUnit.isdel">Isdel</span></dt>
+                    <dd>
+                        <span>{{vm.mtdUnit.isdel}}</span>
+                    </dd> -->
+                    <dt><span data-translate="astcoreApp.mtdUnit.createby">Createby</span></dt>
+                    <dd>
+                        <span>{{vm.mtdUnit.createby}}</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.mtdUnit.createdate">Createdate</span></dt>
+                    <dd>
+                        <span>{{vm.mtdUnit.createdate | date:'mediumDate'}}</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.mtdUnit.lastmodifyby">Lastmodifyby</span></dt>
+                    <dd>
+                        <span>{{vm.mtdUnit.lastmodifyby}}</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.mtdUnit.lastmodifydate">Lastmodifydate</span></dt>
+                    <dd>
+                        <span>{{vm.mtdUnit.lastmodifydate | date:'mediumDate'}}</span>
+                    </dd>
+                </dl>
+
+                <button type="submit"
+                        ui-sref="{{ vm.previousState }}"
+                        class="btn btn-info">
+                    <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+                </button>
+
+                <!-- <button type="button" ui-sref="mtd-unit-detail.edit({id:vm.mtdUnit.id})" class="btn btn-primary">
+                    <span class="glyphicon glyphicon-pencil"></span>
+                    <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+                </button> -->
+            </div>
+        </div>
+    </section>
+</div>

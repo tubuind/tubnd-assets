@@ -1,0 +1,72 @@
+<div>
+    <section class="content">
+        <div class="box box-default">
+            <div class="box-body">
+                <h2 class="text-center"><span data-translate="astcoreApp.mtdWard.detail.title">Mtd Ward</span> {{vm.mtdWard.id}}</h2>
+                <hr>
+                <jhi-alert-error></jhi-alert-error>
+                <dl class="dl-horizontal jh-entity-details">
+                    <dt><span data-translate="astcoreApp.mtdWard.wardcode">Wardcode</span></dt>
+                    <dd>
+                        <span>{{vm.mtdWard.wardcode}}</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.mtdWard.wardname">Wardname</span></dt>
+                    <dd>
+                        <span>{{vm.mtdWard.wardname}}</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.mtdWard.wrdlatitude">Wrdlatitude</span></dt>
+                    <dd>
+                        <span>{{vm.mtdWard.wrdlatitude}}</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.mtdWard.wrdlongitude">Wrdlongitude</span></dt>
+                    <dd>
+                        <span>{{vm.mtdWard.wrdlongitude}}</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.mtdWard.active">Active</span></dt>
+                    <dd>
+                        <span class="label label-danger" ng-show="!vm.mtdWard.active"
+                            data-translate="astcoreApp.mtdWard.deactivated">Deactivated</span>
+                        <span class="label label-success" ng-show="vm.mtdWard.active"
+                            data-translate="astcoreApp.mtdWard.activated">Activated</span>
+                    </dd>
+                    <!-- <dt><span data-translate="astcoreApp.mtdWard.isdel">Isdel</span></dt>
+                    <dd>
+                        <span>{{vm.mtdWard.isdel}}</span>
+                    </dd> -->
+                    <dt><span data-translate="astcoreApp.mtdWard.createby">Createby</span></dt>
+                    <dd>
+                        <span>{{vm.mtdWard.createby}}</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.mtdWard.createdate">Createdate</span></dt>
+                    <dd>
+                        <span>{{vm.mtdWard.createdate | date:'mediumDate'}}</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.mtdWard.lastmodifyby">Lastmodifyby</span></dt>
+                    <dd>
+                        <span>{{vm.mtdWard.lastmodifyby}}</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.mtdWard.lastmodifydate">Lastmodifydate</span></dt>
+                    <dd>
+                        <span>{{vm.mtdWard.lastmodifydate | date:'mediumDate'}}</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.mtdWard.mtdDistrict">Mtd District</span></dt>
+                    <dd>
+                        <a ui-sref="mtd-district-detail({id:vm.mtdWard.mtdDistrictId})">{{vm.mtdWard.districtname}}</a>
+                    </dd>
+                </dl>
+
+                <button type="submit"
+                        ui-sref="{{ vm.previousState }}"
+                        class="btn btn-info">
+                    <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+                </button>
+
+                <!-- <button type="button" ui-sref="mtd-ward-detail.edit({id:vm.mtdWard.id})" class="btn btn-primary">
+                    <span class="glyphicon glyphicon-pencil"></span>
+                    <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+                </button> -->
+            </div>
+        </div>
+    </section>
+</div>
+

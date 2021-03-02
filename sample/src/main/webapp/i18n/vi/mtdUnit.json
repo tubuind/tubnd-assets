@@ -1,0 +1,35 @@
+{
+    "astcoreApp": {
+        "mtdUnit" : {
+            "home": {
+                "title": "Đơn vị đo",
+                "createLabel": "Thêm mới",
+                "createOrEditLabel": "Thêm mới hoặc cập nhật Đơn vị đo",
+                "search": "Tìm kiếm Đơn vị đo",
+                "createForm": "Thêm mới Đơn vị đo",
+                "updateForm": "Cập nhật thông tin Đơn vị đo"
+            },
+            "created": "Một Đơn vị đo mới được tạo với định danh {{ param }}",
+            "updated": "Một Đơn vị đo cập nhật với định danh {{ param }}",
+            "deleted": "Một Đơn vị đo đã xóa với định danh {{ param }}",
+            "delete": {
+                "question": "Bạn có chắc chắn muốn xóa Đơn vị đo {{ id }} không?"
+            },
+            "detail": {
+                "title": "Đơn vị đo"
+            },
+            "unitcode": "Mã Đơn vị đo",
+            "unitname": "Tên Đơn vị đo",
+            "active": "Trạng thái",
+            "isdel": "Isdel",
+            "createby": "Người tạp",
+            "createdate": "Ngày tạo",
+            "lastmodifyby": "Người sửa",
+            "lastmodifydate": "Ngày sửa",
+            "mtdDevicegroup": "Nhóm thiết bị",
+            "deactivated": "Không hoạt động",
+            "activated": "Hoạt động",
+            "action": "Thao tác"
+        }
+    }
+}

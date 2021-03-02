@@ -1,0 +1,75 @@
+<div>
+    <section class="content">
+        <div class="box box-default">
+            <div class="box-body">
+                <h2 class="text-center"><span data-translate="astcoreApp.mtdOrganization.detail.title">Mtd Organization</span> {{vm.mtdOrganization.id}}</h2>
+                <hr>
+                <jhi-alert-error></jhi-alert-error>
+                <dl class="dl-horizontal jh-entity-details">
+                    <dt><span data-translate="astcoreApp.mtdOrganization.organizationcode">Organizationcode</span></dt>
+                    <dd>
+                        <span>{{vm.mtdOrganization.organizationcode}}</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.mtdOrganization.organizationname">Organizationname</span></dt>
+                    <dd>
+                        <span>{{vm.mtdOrganization.organizationname}}</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.mtdOrganization.address">Address</span></dt>
+                    <dd>
+                        <span>{{vm.mtdOrganization.address}}</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.mtdOrganization.mobilenum">Mobilenum</span></dt>
+                    <dd>
+                        <span>{{vm.mtdOrganization.mobilenum}}</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.mtdOrganization.phonenum">Phonenum</span></dt>
+                    <dd>
+                        <span>{{vm.mtdOrganization.phonenum}}</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.mtdOrganization.organizationname">Parents</span></dt>
+                    <dd>
+                        <span>{{vm.mtdOrganization.parents}}</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.mtdOrganization.active">Active</span></dt>
+                    <dd>
+                        <span class="label label-danger" ng-show="!vm.mtdOrganization.active"
+                            data-translate="astcoreApp.mtdOrganization.deactivated">Deactivated</span>
+                        <span class="label label-success" ng-show="vm.mtdOrganization.active"
+                            data-translate="astcoreApp.mtdOrganization.activated">Activated</span>
+                    </dd>
+                    <!-- <dt><span data-translate="astcoreApp.mtdOrganization.isdel">Isdel</span></dt>
+                    <dd>
+                        <span>{{vm.mtdOrganization.isdel}}</span>
+                    </dd> -->
+                    <dt><span data-translate="astcoreApp.mtdOrganization.createby">Createby</span></dt>
+                    <dd>
+                        <span>{{vm.mtdOrganization.createby}}</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.mtdOrganization.createdate">Createdate</span></dt>
+                    <dd>
+                        <span>{{vm.mtdOrganization.createdate | date:'mediumDate'}}</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.mtdOrganization.lastmodifyby">Lastmodifyby</span></dt>
+                    <dd>
+                        <span>{{vm.mtdOrganization.lastmodifyby}}</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.mtdOrganization.lastmodifydate">Lastmodifydate</span></dt>
+                    <dd>
+                        <span>{{vm.mtdOrganization.lastmodifydate | date:'mediumDate'}}</span>
+                    </dd>
+                </dl>
+
+                <button type="submit"
+                        ui-sref="{{ vm.previousState }}"
+                        class="btn btn-info">
+                    <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+                </button>
+
+                <!-- <button type="button" ui-sref="mtd-organization-detail.edit({id:vm.mtdOrganization.id})" class="btn btn-primary">
+                    <span class="glyphicon glyphicon-pencil"></span>
+                    <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+                </button> -->
+            </div>
+        </div>
+    </section>
+</div>

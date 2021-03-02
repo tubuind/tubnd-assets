@@ -1,0 +1,127 @@
+<div>
+    <section class="content">
+        <div class="box box-default">
+            <div class="box-body">
+                <h2 class="text-center"><span data-translate="astcoreApp.cifMaster.detail.title">Cif Master</span> {{vm.cifMaster.id}}</h2>
+                <hr>
+                <jhi-alert-error></jhi-alert-error>
+                <dl class="dl-horizontal jh-entity-details">
+                    <dt><span data-translate="astcoreApp.cifMaster.customercode">Customercode</span></dt>
+                    <dd>
+                        <span>{{vm.cifMaster.customercode}}</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.cifMaster.customername">Customername</span></dt>
+                    <dd>
+                        <span>{{vm.cifMaster.customername}}</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.cifMaster.sex">Sex</span></dt>
+                    <dd>
+                        <span class="label label-danger" ng-show="!vm.cifMaster.sex"
+                            data-translate="astcoreApp.EnumSex.0">Female</span>
+                        <span class="label label-success" ng-show="vm.cifMaster.sex"
+                            data-translate="astcoreApp.EnumSex.1">Male</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.cifMaster.birthday">Birthday</span></dt>
+                    <dd>
+                        <span>{{vm.cifMaster.birthday | date:'mediumDate'}}</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.cifMaster.identifycode">Identifycode</span></dt>
+                    <dd>
+                        <span>{{vm.cifMaster.identifycode}}</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.cifMaster.identifydate">Identifydate</span></dt>
+                    <dd>
+                        <span>{{vm.cifMaster.identifydate | date:'mediumDate'}}</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.cifMaster.address">Address</span></dt>
+                    <dd>
+                        <span>{{vm.cifMaster.address}}</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.cifMaster.mobilenum">Mobilenum</span></dt>
+                    <dd>
+                        <span>{{vm.cifMaster.mobilenum}}</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.cifMaster.phonenum">Phonenum</span></dt>
+                    <dd>
+                        <span>{{vm.cifMaster.phonenum}}</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.cifMaster.customertype">Customertype</span></dt>
+                    <dd>
+                        <span>{{vm.cifMaster.customertype}}</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.cifMaster.custparents">Custparents</span></dt>
+                    <dd>
+                        <span>{{vm.cifMaster.custparentsName}}</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.cifMaster.note">Note</span></dt>
+                    <dd>
+                        <span>{{vm.cifMaster.note}}</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.cifMaster.custlatitude">Custlatitude</span></dt>
+                    <dd>
+                        <span>{{vm.cifMaster.custlatitude}}</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.cifMaster.custlongitude">Custlongitude</span></dt>
+                    <dd>
+                        <span>{{vm.cifMaster.custlongitude}}</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.cifMaster.active">Active</span></dt>
+                    <dd>
+                        <span class="label label-danger" ng-show="!vm.cifMaster.active"
+                            data-translate="astcoreApp.cifMaster.deactivated">Deactivated</span>
+                        <span class="label label-success" ng-show="vm.cifMaster.active"
+                            data-translate="astcoreApp.cifMaster.activated">Activated</span>
+                    </dd>
+                    <!-- <dt><span data-translate="astcoreApp.cifMaster.isdel">Isdel</span></dt> -->
+                    <!-- <dd>
+                        <span>{{vm.cifMaster.isdel}}</span>
+                    </dd> -->
+                    <dt><span data-translate="astcoreApp.cifMaster.createby">Createby</span></dt>
+                    <dd>
+                        <span>{{vm.cifMaster.createby}}</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.cifMaster.createdate">Createdate</span></dt>
+                    <dd>
+                        <span>{{vm.cifMaster.createdate | date:'mediumDate'}}</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.cifMaster.lastmodifyby">Lastmodifyby</span></dt>
+                    <dd>
+                        <span>{{vm.cifMaster.lastmodifyby}}</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.cifMaster.lastmodifydate">Lastmodifydate</span></dt>
+                    <dd>
+                        <span>{{vm.cifMaster.lastmodifydate | date:'mediumDate'}}</span>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.cifMaster.mtdWard">Mtd Ward</span></dt>
+                    <dd>
+                        <a ui-sref="mtd-ward-detail({id:vm.cifMaster.mtdWardId})">{{vm.cifMaster.mtdWardId}}</a>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.cifMaster.mtdOrganization">Mtd Organization</span></dt>
+                    <dd>
+                        <a ui-sref="mtd-organization-detail({id:vm.cifMaster.mtdOrganizationId})">{{vm.cifMaster.mtdOrganizationName}}</a>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.cifMaster.mtdEcosectors">Mtd Ecosectors</span></dt>
+                    <dd>
+                        <a ui-sref="mtd-ecosectors-detail({id:vm.cifMaster.mtdEcosectorsId})">{{vm.cifMaster.mtdEcosectorsName}}</a>
+                    </dd>
+                    <dt><span data-translate="astcoreApp.cifMaster.mtdCustomergroup">Mtd Customergroup</span></dt>
+                    <dd>
+                        <a ui-sref="mtd-customergroup-detail({id:vm.cifMaster.mtdCustomergroupId})">{{vm.cifMaster.mtdCustomergroupName}}</a>
+                    </dd>
+                </dl>
+
+                <button type="submit"
+                        ui-sref="{{ vm.previousState }}"
+                        class="btn btn-info">
+                    <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+                </button>
+
+                <!-- <button type="button" ui-sref="cif-master-detail.edit({id:vm.cifMaster.id})" class="btn btn-primary">
+                    <span class="glyphicon glyphicon-pencil"></span>
+                    <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+                </button> -->
+            </div>
+        </div>
+    </section>
+</div>
+

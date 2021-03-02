@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity CifMaster.
+    -->
+    <changeSet id="20170530093824-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="mtd_ward_id"
+                                 baseTableName="cif_master"
+                                 constraintName="fk_cif_master_mtd_ward_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="mtd_ward"/>
+
+        <addForeignKeyConstraint baseColumnNames="mtd_organization_id"
+                                 baseTableName="cif_master"
+                                 constraintName="cif_master_mtd_organizat_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="mtd_organization"/>
+
+        <addForeignKeyConstraint baseColumnNames="mtd_ecosectors_id"
+                                 baseTableName="cif_master"
+                                 constraintName="cif_master_mtd_ecosector_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="mtd_ecosectors"/>
+
+        <addForeignKeyConstraint baseColumnNames="mtd_customergroup_id"
+                                 baseTableName="cif_master"
+                                 constraintName="cif_master_mtd_customerg_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="mtd_customergroup"/>
+
+    </changeSet>
+</databaseChangeLog>

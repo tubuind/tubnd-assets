@@ -1,0 +1,117 @@
+<div>
+    <section class="content-header">
+        <h1 data-translate="astcoreApp.cifDevice.home.title">Cif Devices</h1>
+    </section>
+
+    <section class="content">
+        <div class="box box-default">
+            <div class="box-header with-border">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xs-8 no-padding-left">
+                            <form name="searchForm" class="form-inline">
+                                <div class="input-group pull-right" >
+                                    <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'astcoreApp.cifDevice.home.search' | translate }}">
+                                    <span  class="input-group-btn width-min" >
+                                        <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
+                                            <span class="glyphicon glyphicon-search"></span>
+                                        </button>
+                                    </span>
+                                    <span class="input-group-btn width-min" ng-if="vm.currentSearch">
+                                        <button class="btn btn-info" ng-click="vm.clear()">
+                                            <span class="glyphicon glyphicon-trash"></span>
+                                        </button>
+                                    </span>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-xs-4 no-padding-right text-right">
+                            <button class="btn btn-primary" ui-sref="cif-device.new" >
+                                <span class="glyphicon glyphicon-plus"></span>
+                                <span class="hidden-xs-down"  data-translate="astcoreApp.cifDevice.home.createLabel">
+                                    Create new Cif Device
+                                </span>
+                            </button>                         
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <jhi-alert></jhi-alert>
+
+            <div class="box-body">
+                <div class="table-responsive">
+                    <table class="jh-table table table-striped">
+                        <thead>
+                        <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                            <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                            <th><span data-translate="astcoreApp.cifDevice.actiontype">Actiontype</span></th>
+                            <th><span data-translate="astcoreApp.cifDevice.startdate">Startdate</span></th>
+                            <th><span data-translate="astcoreApp.cifDevice.enddate">Enddate</span></th>
+                            <!--<th jh-sort-by="isdel"><span data-translate="astcoreApp.cifDevice.isdel">Isdel</span> <span class="glyphicon glyphicon-sort"></span></th>-->
+                            <!--<th jh-sort-by="createby"><span data-translate="astcoreApp.cifDevice.createby">Createby</span> <span class="glyphicon glyphicon-sort"></span></th>-->
+                            <!--<th jh-sort-by="createdate"><span data-translate="astcoreApp.cifDevice.createdate">Createdate</span> <span class="glyphicon glyphicon-sort"></span></th>-->
+                            <!--<th jh-sort-by="lastmodifyby"><span data-translate="astcoreApp.cifDevice.lastmodifyby">Lastmodifyby</span> <span class="glyphicon glyphicon-sort"></span></th>-->
+                            <!--<th jh-sort-by="lastmodifydate"><span data-translate="astcoreApp.cifDevice.lastmodifydate">Lastmodifydate</span> <span class="glyphicon glyphicon-sort"></span></th>-->
+                            <th><span data-translate="astcoreApp.cifDevice.cifMaster">Cif Master</span></th>
+                            <th><span data-translate="astcoreApp.cifDevice.deviceInfo">Device Info</span></th>
+                            <th><span data-translate="astcoreApp.cifDevice.action">Action</span></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="cifDevice in vm.cifDevices track by cifDevice.id">
+                            <td><a ui-sref="cif-device-detail({id:cifDevice.id})">{{cifDevice.id}}</a></td>
+                            <td>
+                                <span ng-show="cifDevice.actiontype"
+                                    data-translate="astcoreApp.EnumActionType.1">Cho thuê</span>
+                                <span ng-show="!cifDevice.actiontype"
+                                    data-translate="astcoreApp.EnumActionType.0">Bán</span>
+                            </td>
+                            <td>{{cifDevice.startdate | date:'mediumDate'}}</td>
+                            <td>{{cifDevice.enddate | date:'mediumDate'}}</td>
+                            <!--<td>{{cifDevice.isdel}}</td>-->
+                            <!--<td>{{cifDevice.createby}}</td>-->
+                            <!--<td>{{cifDevice.createdate | date:'mediumDate'}}</td>-->
+                            <!--<td>{{cifDevice.lastmodifyby}}</td>-->
+                            <!--<td>{{cifDevice.lastmodifydate | date:'mediumDate'}}</td>-->
+                            <td>
+                                <a ui-sref="cif-master-detail({id:cifDevice.cifMasterId})">{{cifDevice.cifMasterName}}</a>
+                            </td>
+                            <td>
+                                <a ui-sref="device-info-detail({id:cifDevice.deviceInfoId})">{{cifDevice.deviceInfoName}}</a>
+                            </td>
+                            <td>
+                                <!-- <div class="btn-group flex-btn-group-container"> -->
+                                    <button type="submit"
+                                            ui-sref="cif-device-detail({id:cifDevice.id})"
+                                            class="btn btn-info btn-sm">
+                                        <span class="glyphicon glyphicon-eye-open"></span>
+                                        <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                                    </button>
+                                    <button type="submit"
+                                            ui-sref="cif-device.edit({id:cifDevice.id})"
+                                            class="btn btn-primary btn-sm">
+                                        <span class="glyphicon glyphicon-pencil"></span>
+                                        <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                                    </button>
+                                    <button type="submit"
+                                            ui-sref="cif-device.delete({id:cifDevice.id})"
+                                            class="btn btn-danger btn-sm">
+                                        <span class="glyphicon glyphicon-remove-circle"></span>
+                                        <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                                    </button>
+                                <!-- </div> -->
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="text-center">
+                    <jhi-item-count page="vm.page" total="vm.queryCount" items-per-page="vm.itemsPerPage"></jhi-item-count>
+                    <uib-pagination class="pagination-sm" total-items="vm.totalItems" items-per-page="vm.itemsPerPage" ng-model="vm.page" ng-change="vm.transition()"></uib-pagination>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+

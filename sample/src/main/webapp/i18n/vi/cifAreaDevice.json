@@ -1,0 +1,30 @@
+{
+    "astcoreApp": {
+        "cifAreaDevice" : {
+            "home": {
+                "title": "Khu vực thiết bị",
+                "createLabel": "Thêm mới",
+                "createOrEditLabel": "Thêm mới hoặc cập nhật Khu vực thiết bị",
+                "search": "Tìm Khu vực thiết bị",
+                "createForm": "Thêm mới Khu vực thiết bị",
+                "updateForm": "Cập nhật thông tin Khu vực thiết bị"
+            },
+            "created": "Một Khu vực thiết bị mới được tạo với định danh {{ param }}",
+            "updated": "Một Khu vực thiết bị cập nhật với định danh {{ param }}",
+            "deleted": "Một Khu vực thiết bị đã xóa với định danh {{ param }}",
+            "delete": {
+                "question": "Bạn có chắc chắn muốn xóa Khu vực thiết bị {{ id }} không?"
+            },
+            "detail": {
+                "title": "Khu vực thiết bị"
+            },
+            "devicecode": "Mã thiết bị",
+            "startdate": "Ngày hiệu lực",
+            "cifArea": "Khu vực",
+            "cifDevice": "Thiết bị",
+            "action": "Thao tác",
+            "activated": "Hoạt động",
+            "deactivated": "Không hoạt động"
+        }
+    }
+}

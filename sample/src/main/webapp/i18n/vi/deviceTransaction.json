@@ -1,0 +1,33 @@
+{
+    "astcoreApp": {
+        "deviceTransaction" : {
+            "home": {
+                "title": "Giá trị đo thiết bị",
+                "createLabel": "Thêm mới một Giá trị đo thiết bị",
+                "createOrEditLabel": "Thêm mới hoặc cập nhật Giá trị đo thiết bị",
+                "search": "Tìm Giá trị đo thiết bị"
+            },
+            "created": "Một Giá trị đo thiết bị mới được tạo với định danh {{ param }}",
+            "updated": "Một Giá trị đo thiết bị cập nhật với định danh {{ param }}",
+            "deleted": "Một Giá trị đo thiết bị đã xóa với định danh {{ param }}",
+            "delete": {
+                "question": "Bạn có chắc là muốn xóa Giá trị đo thiết bị {{ id }} không?"
+            },
+            "detail": {
+                "title": "Giá trị đo thiết bị"
+            },
+            "transdate": "Transdate",
+            "devicecode": "Số seri thiết bị",
+            "type":"Loại",
+            "currentvalue": "Giá trị",
+            "valuedate": "Ngày lấy mẫu",
+            "active": "Trạng thái",
+            "isdel": "Isdel",
+            "createby": "Người tạo",
+            "createdate": "Ngày tạo",
+            "lastmodifyby": "Người sửa",
+            "lastmodifydate": "Ngày sửa",
+            "deviceInfo": "Thiết bị"
+        }
+    }
+}

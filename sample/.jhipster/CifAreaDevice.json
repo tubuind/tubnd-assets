@@ -1,0 +1,41 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "cifArea",
+            "otherEntityName": "cifArea",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "cifDevice",
+            "otherEntityName": "cifDevice",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "cifAreaDevice"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "devicecode",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 1,
+            "fieldValidateRulesMaxlength": 30
+        },
+        {
+            "fieldName": "startdate",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "changelogDate": "20170702050921",
+    "entityTableName": "cif_ad",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl"
+}

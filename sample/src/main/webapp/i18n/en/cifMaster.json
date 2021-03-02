@@ -1,0 +1,51 @@
+{
+    "astcoreApp": {
+        "cifMaster" : {
+            "home": {
+                "title": "Cif Masters",
+                "createLabel": "Create a new Cif Master",
+                "createOrEditLabel": "Create or edit a Cif Master",
+                "search": "Search for Cif Master",
+                "createForm": "Create",
+                "updateForm": "Update"
+            },
+            "created": "A new Cif Master is created with identifier {{ param }}",
+            "updated": "A Cif Master is updated with identifier {{ param }}",
+            "deleted": "A Cif Master is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Cif Master {{ id }}?"
+            },
+            "detail": {
+                "title": "Cif Master"
+            },
+            "customercode": "Customercode",
+            "customername": "Customername",
+            "sex": "Sex",
+            "birthday": "Birthday",
+            "identifycode": "Identifycode",
+            "identifydate": "Identifydate",
+            "address": "Address",
+            "mobilenum": "Mobilenum",
+            "phonenum": "Phonenum",
+            "customertype": "Customertype",
+            "custparents": "Custparents",
+            "note": "Note",
+            "custlatitude": "Custlatitude",
+            "custlongitude": "Custlongitude",
+            "active": "Active",
+            "isdel": "Isdel",
+            "createby": "Createby",
+            "createdate": "Createdate",
+            "lastmodifyby": "Lastmodifyby",
+            "lastmodifydate": "Lastmodifydate",
+            "mtdWard": "Mtd Ward",
+            "mtdOrganization": "Mtd Organization",
+            "mtdEcosectors": "Mtd Ecosectors",
+            "mtdCustomergroup": "Mtd Customergroup",
+            "cifDevice": "Cif Device",
+            "action": "Action",
+            "activated": "Activate",
+            "deactivated": "Activated"
+        }
+    }
+}

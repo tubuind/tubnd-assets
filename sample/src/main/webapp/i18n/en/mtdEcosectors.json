@@ -1,0 +1,34 @@
+{
+    "astcoreApp": {
+        "mtdEcosectors" : {
+            "home": {
+                "title": "Mtd Ecosectors",
+                "createLabel": "Create a new Mtd Ecosectors",
+                "createOrEditLabel": "Create or edit a Mtd Ecosectors",
+                "search": "Search for Mtd Ecosectors",
+                "createForm": "Create a new Mtd Ecosectors",
+                "updateForm": "Edit a new Mtd Ecosectors"
+            },
+            "created": "A new Mtd Ecosectors is created with identifier {{ param }}",
+            "updated": "A Mtd Ecosectors is updated with identifier {{ param }}",
+            "deleted": "A Mtd Ecosectors is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Mtd Ecosectors {{ id }}?"
+            },
+            "detail": {
+                "title": "Mtd Ecosectors"
+            },
+            "econame": "Econame",
+            "active": "Active",
+            "isdel": "Isdel",
+            "createby": "Createby",
+            "createdate": "Createdate",
+            "lastmodifyby": "Lastmodifyby",
+            "lastmodifydate": "Lastmodifydate",
+            "cifMaster": "Cif Master",
+            "deactivated": "Deactivated",
+            "activated": "Activated",
+            "action": "Action"
+        }
+    }
+}

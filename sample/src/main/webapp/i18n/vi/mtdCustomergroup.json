@@ -1,0 +1,29 @@
+{
+    "astcoreApp": {
+        "mtdCustomergroup" : {
+            "home": {
+                "title": "Nhóm khách hàng",
+                "createLabel": "Thêm mới một Nhóm khách hàng",
+                "createOrEditLabel": "Thêm mới hoặc cập nhật Nhóm khách hàng",
+                "search": "Tìm kiếm Nhóm khách hàng"
+            },
+            "created": "Một Nhóm khách hàng mới được tạo với định danh {{ param }}",
+            "updated": "Một Nhóm khách hàng cập nhật với định danh {{ param }}",
+            "deleted": "Một Nhóm khách hàng đã xóa với định danh {{ param }}",
+            "delete": {
+                "question": "Bạn có chắc là muốn xóa Nhóm khách hàng {{ id }}?"
+            },
+            "detail": {
+                "title": "Nhóm khách hàng"
+            },
+            "custgroupname": "Tên Nhóm khách hàng",
+            "active": "Trạng thái",
+            "isdel": "Isdel",
+            "createby": "Createby",
+            "createdate": "Createdate",
+            "lastmodifyby": "Lastmodifyby",
+            "lastmodifydate": "Lastmodifydate",
+            "cifMaster": "Cif Master"
+        }
+    }
+}

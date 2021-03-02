@@ -1,0 +1,215 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title text-center" id="myMtdProvinceLabel" data-translate="astcoreApp.mtdProvince.home.createForm" ng-show="vm.mtdProvince.id == null">Create a Mtd Province</h4>
+        <h4 class="modal-title text-center" id="myMtdProvinceLabel" data-translate="astcoreApp.mtdProvince.home.updateForm" ng-show="vm.mtdProvince.id != null">Edit a Mtd Province</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.mtdProvince.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.mtdProvince.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_provincecode"><span  data-translate="astcoreApp.mtdProvince.provincecode">Provincecode</span><span class="required"> (*)</span></label>
+            <input type="text" class="form-control" name="provincecode" id="field_provincecode"
+                    ng-model="vm.mtdProvince.provincecode"
+                    required jhi-maxlength="10"/>
+            <div ng-show="editForm.provincecode.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.provincecode.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <!-- <p class="help-block"
+                    ng-show="editForm.provincecode.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="1">
+                    This field is required to be at least 1 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.provincecode.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="10">
+                    This field cannot be longer than 10 characters.
+                </p> -->
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_provincename"><span data-translate="astcoreApp.mtdProvince.provincename">Provincename</span><span class="required"> (*)</span></label>
+            <input type="text" class="form-control" name="provincename" id="field_provincename"
+                    ng-model="vm.mtdProvince.provincename"
+                    required jhi-maxlength="50"/>
+            <div ng-show="editForm.provincename.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.provincename.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <!-- <p class="help-block"
+                    ng-show="editForm.provincename.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="1">
+                    This field is required to be at least 1 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.provincename.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="50">
+                    This field cannot be longer than 50 characters.
+                </p> -->
+            </div>
+        </div>
+        <!-- <div class="form-group">
+            <label class="control-label" data-translate="astcoreApp.mtdProvince.countryname" for="field_countryname">Countryname</label>
+            <input type="text" class="form-control" name="countryname" id="field_countryname"
+                    ng-model="vm.mtdProvince.countryname"
+                    required ng-minlength="1" ng-maxlength="250"/>
+            <div ng-show="editForm.countryname.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.countryname.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.countryname.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="1">
+                    This field is required to be at least 1 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.countryname.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="250">
+                    This field cannot be longer than 250 characters.
+                </p>
+            </div>
+        </div> -->
+        <div class="form-group">
+            <label data-translate="astcoreApp.mtdProvince.mtdCountry" for="field_mtdCountry">Mtd Country</label>
+            <select class="form-control" id="field_mtdCountry" name="mtdCountry" ng-model="vm.mtdProvince.mtdCountryId" ng-options="mtdCountry.id as mtdCountry.countryname for mtdCountry in vm.mtdcountries">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="astcoreApp.mtdProvince.prolatitude" for="field_prolatitude">Prolatitude</label>
+            <input type="number" class="form-control" name="prolatitude" id="field_prolatitude"
+                    ng-model="vm.mtdProvince.prolatitude"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="astcoreApp.mtdProvince.prolongitude" for="field_prolongitude">Prolongitude</label>
+            <input type="number" class="form-control" name="prolongitude" id="field_prolongitude"
+                    ng-model="vm.mtdProvince.prolongitude"
+                    />
+        </div>
+
+        <div class="form-group">
+            <label class="control-label" data-translate="astcoreApp.mtdProvince.status" for="field_active">Status</label>
+            <select number-converter class="form-control" name="active" ng-model="vm.mtdProvince.active" id="field_active">
+                <option value="1" data-translate="astcoreApp.EnumStatus.1">Active</option>
+                <option value="0" data-translate="astcoreApp.EnumStatus.0">InActive</option>
+            </select>
+        </div>
+
+        <!--<div class="form-group">-->
+            <!--<label class="control-label" data-translate="astcoreApp.mtdProvince.active" for="field_active">Active</label>-->
+            <!--<input type="number" class="form-control" name="active" id="field_active"-->
+                    <!--ng-model="vm.mtdProvince.active"-->
+                    <!--required min="0" max="10"/>-->
+            <!--<div ng-show="editForm.active.$invalid">-->
+                <!--<p class="help-block"-->
+                    <!--ng-show="editForm.active.$error.required" data-translate="entity.validation.required">-->
+                    <!--This field is required.-->
+                <!--</p>-->
+                <!--<p class="help-block"-->
+                    <!--ng-show="editForm.active.$error.min" data-translate="entity.validation.min" translate-value-min="0">-->
+                    <!--This field should be at least 0.-->
+                <!--</p>-->
+                <!--<p class="help-block"-->
+                    <!--ng-show="editForm.active.$error.max" data-translate="entity.validation.max" translate-value-max="10">-->
+                    <!--This field cannot be more than 10.-->
+                <!--</p>-->
+                <!--<p class="help-block"-->
+                    <!--ng-show="editForm.active.$error.number" data-translate="entity.validation.number">-->
+                    <!--This field should be a number.-->
+                <!--</p>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="form-group">-->
+            <!--<label class="control-label" data-translate="astcoreApp.mtdProvince.isdel" for="field_isdel">Isdel</label>-->
+            <!--<input type="number" class="form-control" name="isdel" id="field_isdel"-->
+                    <!--ng-model="vm.mtdProvince.isdel"-->
+                    <!--required min="0" max="10"/>-->
+            <!--<div ng-show="editForm.isdel.$invalid">-->
+                <!--<p class="help-block"-->
+                    <!--ng-show="editForm.isdel.$error.required" data-translate="entity.validation.required">-->
+                    <!--This field is required.-->
+                <!--</p>-->
+                <!--<p class="help-block"-->
+                    <!--ng-show="editForm.isdel.$error.min" data-translate="entity.validation.min" translate-value-min="0">-->
+                    <!--This field should be at least 0.-->
+                <!--</p>-->
+                <!--<p class="help-block"-->
+                    <!--ng-show="editForm.isdel.$error.max" data-translate="entity.validation.max" translate-value-max="10">-->
+                    <!--This field cannot be more than 10.-->
+                <!--</p>-->
+                <!--<p class="help-block"-->
+                    <!--ng-show="editForm.isdel.$error.number" data-translate="entity.validation.number">-->
+                    <!--This field should be a number.-->
+                <!--</p>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="form-group">-->
+            <!--<label class="control-label" data-translate="astcoreApp.mtdProvince.createby" for="field_createby">Createby</label>-->
+            <!--<input type="text" class="form-control" name="createby" id="field_createby"-->
+                    <!--ng-model="vm.mtdProvince.createby"-->
+                    <!--ng-minlength="1" ng-maxlength="50"/>-->
+            <!--<div ng-show="editForm.createby.$invalid">-->
+                <!--<p class="help-block"-->
+                    <!--ng-show="editForm.createby.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="1">-->
+                    <!--This field is required to be at least 1 characters.-->
+                <!--</p>-->
+                <!--<p class="help-block"-->
+                    <!--ng-show="editForm.createby.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="50">-->
+                    <!--This field cannot be longer than 50 characters.-->
+                <!--</p>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="form-group">-->
+            <!--<label class="control-label" data-translate="astcoreApp.mtdProvince.createdate" for="field_createdate">Createdate</label>-->
+                <!--<div class="input-group">-->
+                    <!--<input id="field_createdate" type="text" class="form-control" name="createdate" uib-datepicker-popup="{{dateformat}}" ng-model="vm.mtdProvince.createdate" is-open="vm.datePickerOpenStatus.createdate"-->
+                    <!--/>-->
+                    <!--<span class="input-group-btn">-->
+                        <!--<button type="button" class="btn btn-default" ng-click="vm.openCalendar('createdate')"><i class="glyphicon glyphicon-calendar"></i></button>-->
+                    <!--</span>-->
+                <!--</div>-->
+        <!--</div>-->
+        <!--<div class="form-group">-->
+            <!--<label class="control-label" data-translate="astcoreApp.mtdProvince.lastmodifyby" for="field_lastmodifyby">Lastmodifyby</label>-->
+            <!--<input type="text" class="form-control" name="lastmodifyby" id="field_lastmodifyby"-->
+                    <!--ng-model="vm.mtdProvince.lastmodifyby"-->
+                    <!--ng-minlength="1" ng-maxlength="50"/>-->
+            <!--<div ng-show="editForm.lastmodifyby.$invalid">-->
+                <!--<p class="help-block"-->
+                    <!--ng-show="editForm.lastmodifyby.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="1">-->
+                    <!--This field is required to be at least 1 characters.-->
+                <!--</p>-->
+                <!--<p class="help-block"-->
+                    <!--ng-show="editForm.lastmodifyby.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="50">-->
+                    <!--This field cannot be longer than 50 characters.-->
+                <!--</p>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="form-group">-->
+            <!--<label class="control-label" data-translate="astcoreApp.mtdProvince.lastmodifydate" for="field_lastmodifydate">Lastmodifydate</label>-->
+                <!--<div class="input-group">-->
+                    <!--<input id="field_lastmodifydate" type="text" class="form-control" name="lastmodifydate" uib-datepicker-popup="{{dateformat}}" ng-model="vm.mtdProvince.lastmodifydate" is-open="vm.datePickerOpenStatus.lastmodifydate"-->
+                    <!--/>-->
+                    <!--<span class="input-group-btn">-->
+                        <!--<button type="button" class="btn btn-default" ng-click="vm.openCalendar('lastmodifydate')"><i class="glyphicon glyphicon-calendar"></i></button>-->
+                    <!--</span>-->
+                <!--</div>-->
+        <!--</div>-->
+        
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.close">Close</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+                <i class="fa fa-floppy-o" aria-hidden="true"></i>
+                &nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

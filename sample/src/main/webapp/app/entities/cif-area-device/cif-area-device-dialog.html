@@ -1,0 +1,70 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title text-center" id="myCifAreaDeviceLabel" data-translate="astcoreApp.cifAreaDevice.home.createForm" ng-show="vm.cifAreaDevice.id === null">Create or edit a Cif Area Device</h4>
+        <h4 class="modal-title text-center" id="myCifAreaDeviceLabel" data-translate="astcoreApp.cifAreaDevice.home.updateForm" ng-show="vm.cifAreaDevice.id !== null">Create or edit a Cif Area Device</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.cifAreaDevice.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.cifAreaDevice.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_devicecode"><span data-translate="astcoreApp.cifAreaDevice.devicecode">Devicecode</span><span class="required"> (*)</span></label>
+            <input type="text" class="form-control" name="devicecode" id="field_devicecode"
+                    ng-model="vm.cifAreaDevice.devicecode"
+                    required jhi-maxlength="30"/>
+            <div ng-show="editForm.devicecode.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.devicecode.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <!-- <p class="help-block"
+                    ng-show="editForm.devicecode.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="1">
+                    This field is required to be at least 1 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.devicecode.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="30">
+                    This field cannot be longer than 30 characters.
+                </p> -->
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="astcoreApp.cifAreaDevice.startdate" for="field_startdate">Startdate</label>
+                <div class="input-group">
+                    <input id="field_startdate" type="text" class="form-control" name="startdate" uib-datepicker-popup="{{dateformat}}" ng-model="vm.cifAreaDevice.startdate" is-open="vm.datePickerOpenStatus.startdate"
+                    />
+                    <span class="input-group-btn input-group-btn-datetime">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('startdate')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+
+        <div class="form-group">
+            <label data-translate="astcoreApp.cifAreaDevice.cifArea" for="field_cifArea">Cif Area</label>
+            <select class="form-control" id="field_cifArea" name="cifArea" ng-model="vm.cifAreaDevice.cifAreaId" ng-options="cifArea.id as cifArea.id for cifArea in vm.cifareas">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="astcoreApp.cifAreaDevice.cifDevice" for="field_cifDevice">Cif Device</label>
+            <select class="form-control" id="field_cifDevice" name="cifDevice" ng-model="vm.cifAreaDevice.cifDeviceId" ng-options="cifDevice.id as cifDevice.id for cifDevice in vm.cifdevices | orderBy:'id'">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.close">Close</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <i class="fa fa-floppy-o" aria-hidden="true"></i>
+            &nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

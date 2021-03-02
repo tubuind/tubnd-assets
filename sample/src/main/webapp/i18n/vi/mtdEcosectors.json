@@ -1,0 +1,34 @@
+{
+    "astcoreApp": {
+        "mtdEcosectors" : {
+            "home": {
+                "title": "Thành phần kinh tế",
+                "createLabel": "Thêm mới",
+                "createOrEditLabel": "Thêm mới hoặc cập nhật TPKT",
+                "search": "Tìm TPKT",
+                "createForm": "Thêm mới TPKT",
+                "updateForm": "Cập nhật thông tin TPKT"
+            },
+            "created": "Một TPKT mới được tạo với định danh {{ param }}",
+            "updated": "Một TPKT cập nhật với định danh {{ param }}",
+            "deleted": "Một TPKT đã xóa với định danh {{ param }}",
+            "delete": {
+                "question": "Bạn có chắc chắn muốn xóa TPKT {{ id }} không?"
+            },
+            "detail": {
+                "title": "Thông  tin chi tiết TPTK"
+            },
+            "econame": "Tên TPKT",
+            "active": "Trạng thái",
+            "isdel": "Isdel",
+            "createby": "Người tạo",
+            "createdate": "Ngày tạo",
+            "lastmodifyby": "Người sửa",
+            "lastmodifydate": "Ngày sửa",
+            "cifMaster": "Cif Master",
+            "deactivated": "Không hoạt động",
+            "activated": "Hoạt động",
+            "action": "Thao tác"
+        }
+    }
+}

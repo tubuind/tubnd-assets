@@ -1,0 +1,38 @@
+{
+    "astcoreApp": {
+        "mtdWard" : {
+            "home": {
+                "title": "Mtd Wards",
+                "createLabel": "Create a new Mtd Ward",
+                "createOrEditLabel": "Create or edit a Mtd Ward",
+                "search": "Search for Mtd Ward",
+                "createForm": "Create a Mtd Ward",
+                "updateForm": "Edit a Mtd Ward"
+            },
+            "created": "A new Mtd Ward is created with identifier {{ param }}",
+            "updated": "A Mtd Ward is updated with identifier {{ param }}",
+            "deleted": "A Mtd Ward is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Mtd Ward {{ id }}?"
+            },
+            "detail": {
+                "title": "Mtd Ward"
+            },
+            "wardcode": "Wardcode",
+            "wardname": "Wardname",
+            "wrdlatitude": "Wrdlatitude",
+            "wrdlongitude": "Wrdlongitude",
+            "active": "Active",
+            "isdel": "Isdel",
+            "createby": "Createby",
+            "createdate": "Createdate",
+            "lastmodifyby": "Lastmodifyby",
+            "lastmodifydate": "Lastmodifydate",
+            "mtdDistrict": "Mtd District",
+            "cifMaster": "Cif Master",
+            "action": "Action",
+            "activated": "Activated",
+            "deactivated": "Deactivated"
+        }
+    }
+}

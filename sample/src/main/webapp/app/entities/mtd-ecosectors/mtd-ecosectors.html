@@ -1,0 +1,102 @@
+<div>
+    <section class="content-header">
+        <h1 data-translate="astcoreApp.mtdEcosectors.home.title">Mtd Ecosectors</h1>
+    </section>
+
+    <section class="content">
+        <div class="box box-default">
+            <div class="box-header with-border">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xs-8 no-padding-left">
+                            <form name="searchForm" class="form-inline">
+                                <div class="input-group pull-right" >
+                                    <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'astcoreApp.mtdEcosectors.home.search' | translate }}">
+                                    <span  class="input-group-btn width-min" >
+			                            <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
+			                                <span class="glyphicon glyphicon-search"></span>
+			                            </button>
+			                        </span>
+                                    <span class="input-group-btn width-min" ng-if="vm.currentSearch">
+			                            <button class="btn btn-info" ng-click="vm.clear()">
+			                                <span class="glyphicon glyphicon-trash"></span>
+			                            </button>
+			                        </span>
+                                </div>
+                            </form>
+                            
+                        </div>
+                        <div class="col-xs-4 no-padding-right text-right">
+                            <button class="btn btn-primary" ui-sref="mtd-ecosectors.new" >
+                                <span class="glyphicon glyphicon-plus"></span>
+                                <span class="hidden-xs-down"  data-translate="astcoreApp.mtdEcosectors.home.createLabel">
+                                    Create new Mtd Ecosectors
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <jhi-alert></jhi-alert>
+
+            <div class="box-body">
+                <div class="table-responsive">
+                    <table class="jh-table table table-striped">
+                        <thead>
+                        <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                            <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                            <th jh-sort-by="econame"><span data-translate="astcoreApp.mtdEcosectors.econame">Econame</span> <span class="glyphicon glyphicon-sort"></span></th>
+                            <th jh-sort-by="active"><span data-translate="astcoreApp.mtdEcosectors.active">Active</span> <span class="glyphicon glyphicon-sort"></span></th>
+                            <!--<th jh-sort-by="isdel"><span data-translate="astcoreApp.mtdEcosectors.isdel">Isdel</span> <span class="glyphicon glyphicon-sort"></span></th>-->
+                            <!--<th jh-sort-by="createby"><span data-translate="astcoreApp.mtdEcosectors.createby">Createby</span> <span class="glyphicon glyphicon-sort"></span></th>-->
+                            <!--<th jh-sort-by="createdate"><span data-translate="astcoreApp.mtdEcosectors.createdate">Createdate</span> <span class="glyphicon glyphicon-sort"></span></th>-->
+                            <!--<th jh-sort-by="lastmodifyby"><span data-translate="astcoreApp.mtdEcosectors.lastmodifyby">Lastmodifyby</span> <span class="glyphicon glyphicon-sort"></span></th>-->
+                            <!--<th jh-sort-by="lastmodifydate"><span data-translate="astcoreApp.mtdEcosectors.lastmodifydate">Lastmodifydate</span> <span class="glyphicon glyphicon-sort"></span></th>-->
+                            <th><span data-translate="astcoreApp.mtdEcosectors.action">Action</span></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="mtdEcosectors in vm.mtdEcosectors track by mtdEcosectors.id">
+                            <td><a ui-sref="mtd-ecosectors-detail({id:mtdEcosectors.id})">{{mtdEcosectors.id}}</a></td>
+                            <td>{{mtdEcosectors.econame}}</td>
+                            <td data-translate="{{'astcoreApp.EnumStatus.' + mtdEcosectors.active}}">{{mtdEcosectors.active}}</td>
+                            <!--<td>{{mtdEcosectors.isdel}}</td>-->
+                            <!--<td>{{mtdEcosectors.createby}}</td>-->
+                            <!--<td>{{mtdEcosectors.createdate | date:'mediumDate'}}</td>-->
+                            <!--<td>{{mtdEcosectors.lastmodifyby}}</td>-->
+                            <!--<td>{{mtdEcosectors.lastmodifydate | date:'mediumDate'}}</td>-->
+                            <td>
+                                <!-- <div class="btn-group flex-btn-group-container"> -->
+                                    <button type="submit"
+                                            ui-sref="mtd-ecosectors-detail({id:mtdEcosectors.id})"
+                                            class="btn btn-info btn-sm">
+                                        <span class="glyphicon glyphicon-eye-open"></span>
+                                        <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                                    </button>
+                                    <button type="submit"
+                                            ui-sref="mtd-ecosectors.edit({id:mtdEcosectors.id})"
+                                            class="btn btn-primary btn-sm">
+                                        <span class="glyphicon glyphicon-pencil"></span>
+                                        <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                                    </button>
+                                    <button type="submit"
+                                            ui-sref="mtd-ecosectors.delete({id:mtdEcosectors.id})"
+                                            class="btn btn-danger btn-sm">
+                                        <span class="glyphicon glyphicon-remove-circle"></span>
+                                        <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                                    </button>
+                                <!-- </div> -->
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="text-center">
+                    <jhi-item-count page="vm.page" total="vm.queryCount" items-per-page="vm.itemsPerPage"></jhi-item-count>
+                    <uib-pagination class="pagination-sm" total-items="vm.totalItems" items-per-page="vm.itemsPerPage" ng-model="vm.page" ng-change="vm.transition()"></uib-pagination>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

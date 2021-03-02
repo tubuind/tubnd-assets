@@ -1,0 +1,41 @@
+{
+    "astcoreApp": {
+        "deviceInfo" : {
+            "home": {
+                "title": "Thiết bị",
+                "createLabel": "Thêm mới",
+                "createOrEditLabel": "Thêm mới hoặc cập nhật Thiết bị",
+                "search": "Tìm kiếm Thiết bị",
+                "createForm": "Thêm mới Thiết bị",
+                "updateForm": "Cập nhật thông tin Thiết bị"
+            },
+            "created": "Một Thiết bị mới được tạo với định danh {{ param }}",
+            "updated": "Một Thiết bị cập nhật với định danh {{ param }}",
+            "deleted": "Một Thiết bị đã xóa với định danh {{ param }}",
+            "delete": {
+                "question": "Bạn có chắc chắn muốn xóa Thiết bị {{ id }} không?"
+            },
+            "detail": {
+                "title": "Thiết bị",
+                "headMeasurement": "Biểu đồ dữ liệu"
+            },
+            "devicecode": "Mã Thiết bị",
+            "devicename": "Tên Thiết bị",
+            "makedate": "Ngày sản xuất",
+            "note": "Ghi chú",
+            "active": "Trạng thái",
+            "isdel": "Isdel",
+            "createby": "Người tạo",
+            "createdate": "Ngày tạo",
+            "lastmodifyby": "Người sửa",
+            "lastmodifydate": "Ngày sửa",
+            "mtdDevicetype": "Loại thiết bị",
+            "mtdDevicegroup": "Nhóm thiết bị",
+            "deviceTransaction": "Lịch sử Thiết bị",
+            "cifDevice": "Cif Device",
+            "action": "Thao tác",
+            "activated": "Hoạt động",
+            "deactivated": "Không hoạt động"
+        }
+    }
+}

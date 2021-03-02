@@ -1,0 +1,231 @@
+entity MtdDevicetype {
+	//DEVICETYPEID
+	Devicetypename String required minlength(1) maxlength(250),
+	Active Integer required min(0) max(10),
+	Isdel Integer required min(0) max(10),
+	Createby String minlength(1) maxlength(50),
+	Createdate LocalDate,
+	Lastmodifyby String minlength(1) maxlength(50),
+	Lastmodifydate LocalDate
+}
+
+entity MtdDevicegroup {
+	//DEVICEGROUPID
+	Devicegroupname String required minlength(1) maxlength(250),
+	Unitcode String required minlength(1) maxlength(10),
+	Active Integer required min(0) max(10),
+	Isdel Integer required min(0) max(10),
+	Createby String minlength(1) maxlength(50),
+	Createdate LocalDate,
+	Lastmodifyby String minlength(1) maxlength(50),
+	Lastmodifydate LocalDate
+}
+
+entity MtdCountry {
+	//COUNTRYID
+	Countryname String required minlength(1) maxlength(250),
+	Active Integer required min(0) max(10),
+	Isdel Integer required min(0) max(10),
+	Createby String minlength(1) maxlength(50),
+	Createdate LocalDate,
+	Lastmodifyby String minlength(1) maxlength(50),
+	Lastmodifydate LocalDate
+}
+
+entity MtdProvince {
+	//PROVINCEID
+	Provincecode String required minlength(1) maxlength(10),
+	Provincename String required minlength(1) maxlength(50),
+	//COUNTRYID
+	Prolatitude BigDecimal,
+	Prolongitude BigDecimal,
+	Countryname String required minlength(1) maxlength(250),
+	Active Integer required min(0) max(10),
+	Isdel Integer required min(0) max(10),
+	Createby String minlength(1) maxlength(50),
+	Createdate LocalDate,
+	Lastmodifyby String minlength(1) maxlength(50),
+	Lastmodifydate LocalDate
+}
+
+entity MtdDistrict {
+	//DISTRICTID
+	Districtcode String required minlength(1) maxlength(10),
+	Districtname String required minlength(1) maxlength(50),
+  	//PROVINCEID
+  	Dislatitude BigDecimal,
+	Dislongitude BigDecimal,
+	Active Integer required min(0) max(10),
+	Isdel Integer required min(0) max(10),
+	Createby String minlength(1) maxlength(50),
+	Createdate LocalDate,
+	Lastmodifyby String minlength(1) maxlength(50),
+	Lastmodifydate LocalDate
+}
+
+entity MtdWard {
+	//WARDID
+	Wardcode String required minlength(1) maxlength(10),
+	Wardname String required minlength(1) maxlength(50),
+  	//DISTRICTID
+  	Wrdlatitude BigDecimal,
+	Wrdlongitude BigDecimal,
+	Active Integer required min(0) max(10),
+	Isdel Integer required min(0) max(10),
+	Createby String minlength(1) maxlength(50),
+	Createdate LocalDate,
+	Lastmodifyby String minlength(1) maxlength(50),
+	Lastmodifydate LocalDate
+}
+
+entity MtdUnit {
+	//UNITID
+	Unitcode String required minlength(1) maxlength(10),
+	Unitname String required minlength(1) maxlength(50),
+	Active Integer required min(0) max(10),
+	Isdel Integer required min(0) max(10),
+	Createby String minlength(1) maxlength(50),
+	Createdate LocalDate,
+	Lastmodifyby String minlength(1) maxlength(50),
+	Lastmodifydate LocalDate
+}
+
+entity MtdOrganization {
+	//ORGANIZATIONID
+	Organizationcode String required minlength(1) maxlength(10),
+	Organizationname String required minlength(1) maxlength(50),
+	Address String required minlength(1) maxlength(500),
+	//WARDID
+	//PROVINCEID
+	Mobilenum String required minlength(1) maxlength(50),
+	Phonenum String required minlength(1) maxlength(50),
+	Parents Integer,
+	Active Integer required min(0) max(10),
+	Isdel Integer required min(0) max(10),
+	Createby String minlength(1) maxlength(50),
+	Createdate LocalDate,
+	Lastmodifyby String minlength(1) maxlength(50),
+	Lastmodifydate LocalDate
+}
+
+entity MtdEcosectors {
+	//ECOID
+	Econame String required minlength(1) maxlength(250),
+	Active Integer required min(0) max(10),
+	Isdel Integer required min(0) max(10),
+	Createby String minlength(1) maxlength(50),
+	Createdate LocalDate,
+	Lastmodifyby String minlength(1) maxlength(50),
+	Lastmodifydate LocalDate
+}
+
+entity MtdCustomergroup {
+	//CUSTGROUPID
+	Custgroupname String required minlength(1) maxlength(250),
+	Active Integer required min(0) max(10),
+	Isdel Integer required min(0) max(10),
+	Createby String minlength(1) maxlength(50),
+	Createdate LocalDate,
+	Lastmodifyby String minlength(1) maxlength(50),
+	Lastmodifydate LocalDate
+}
+
+entity CifMaster {
+	//CUSTOMERID
+  	Customercode String required minlength(1) maxlength(30),
+	Customername String required minlength(1) maxlength(500),
+	Sex Integer,
+	Birthday LocalDate,
+	Identifycode String required minlength(1) maxlength(50),
+	Identifydate LocalDate,
+	Address String minlength(0) maxlength(500),
+	//WARDID
+	//DISTRICTID
+	//PROVINCEID
+	Mobilenum String required minlength(1) maxlength(50),
+	Phonenum String required minlength(1) maxlength(50),
+	//CUSTGROUPID
+	Customertype String required minlength(1) maxlength(10),
+	Custparents Integer,
+	//ECOID
+	Note String minlength(0) maxlength(1000),
+	//ORGANIZATIONID
+	Custlatitude BigDecimal,
+	Custlongitude BigDecimal,
+	Active Integer required min(0) max(10),
+	Isdel Integer required min(0) max(10),
+	Createby String minlength(1) maxlength(50),
+	Createdate LocalDate,
+	Lastmodifyby String minlength(1) maxlength(50),
+	Lastmodifydate LocalDate
+}
+
+entity DeviceInfo {
+	//DEVICEID
+  	Devicecode String required minlength(1) maxlength(10),
+	Devicename String required minlength(1) maxlength(50),
+	//DEVICEGROUPID
+	Makedate LocalDate
+	Note String minlength(0) maxlength(1000),
+	Active Integer required min(0) max(10),
+	Isdel Integer required min(0) max(10),
+	Createby String minlength(1) maxlength(50),
+	Createdate LocalDate,
+	Lastmodifyby String minlength(1) maxlength(50),
+	Lastmodifydate LocalDate
+}
+
+entity DeviceTransaction {
+	//DEVICETRANSID
+	Transdate LocalDate,
+	Devicecode String required minlength(1) maxlength(50),
+	Currentvalue BigDecimal,
+	Valuedate LocalDate,
+	Active Integer required min(0) max(10),
+	Isdel Integer required min(0) max(10),
+	Createby String minlength(1) maxlength(50),
+	Createdate LocalDate,
+	Lastmodifyby String minlength(1) maxlength(50),
+	Lastmodifydate LocalDate
+}
+
+entity CifDevice {
+	//CIFDEVICEID
+  	//CUSTOMERID
+  	//DEVICECODE
+  	Actiontype Integer required min(0) max(10),
+  	Startdate LocalDate,
+  	Enddate LocalDate,
+	Isdel Integer required min(0) max(10),
+	Createby String minlength(1) maxlength(50),
+	Createdate LocalDate,
+	Lastmodifyby String minlength(1) maxlength(50),
+	Lastmodifydate LocalDate
+}
+
+relationship OneToMany {
+	MtdCountry{mtdProvince} to MtdProvince,
+	MtdProvince{mtdDistrict} to MtdDistrict,
+	MtdDistrict{mtdWard} to MtdWard,
+	MtdWard{cifMaster} to CifMaster,
+	CifMaster{cifDevice} to CifDevice,
+
+	MtdDevicetype{deviceInfo} to DeviceInfo,
+	DeviceInfo{deviceTransaction} to DeviceTransaction,
+	DeviceInfo{cifDevice} to CifDevice,
+
+	MtdUnit{mtdDevicegroup} to MtdDevicegroup,
+	MtdDevicegroup{deviceInfo} to DeviceInfo,
+	
+    MtdCustomergroup{cifMaster} to CifMaster,
+	MtdEcosectors{cifMaster} to CifMaster,
+	MtdOrganization{cifMaster} to CifMaster
+}
+
+// Set pagination options
+paginate * with pagination
+
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl

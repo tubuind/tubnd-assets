@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity CifAreaDevice.
+    -->
+    <changeSet id="20170702050921-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="cif_area_id"
+                                 baseTableName="cif_areadevice"
+                                 constraintName="fk_cif_area_device_cif_area_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="cif_area"/>
+
+        <addForeignKeyConstraint baseColumnNames="cif_device_id"
+                                 baseTableName="cif_areadevice"
+                                 constraintName="cif_area_devic_cif_device_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="cif_device"/>
+
+    </changeSet>
+</databaseChangeLog>
